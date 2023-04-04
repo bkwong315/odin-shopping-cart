@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Shop from './pages/Shop';
+import ShopPage from './pages/ShopPage';
 import Product from './interfaces/Product';
 import Header from './components/Header/Header';
 import ProductPage from './pages/ProductPage';
@@ -56,7 +56,9 @@ const App = () => {
       <CartSidebar items={cart} />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='shop' element={<Shop ProductList={ProductList} />}></Route>
+        <Route
+          path='shop'
+          element={<ShopPage ProductList={ProductList} />}></Route>
         <Route
           path='/shop/product/:productId'
           element={
