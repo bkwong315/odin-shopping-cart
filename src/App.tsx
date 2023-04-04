@@ -7,6 +7,7 @@ import Product from './interfaces/Product';
 import Header from './components/Header/Header';
 import ProductPage from './pages/ProductPage';
 import ShoppingCart from './interfaces/ShoppingCart';
+import CartSidebar from './components/CartSidebar';
 
 const ProductList: { [productId: string]: Product } = {
   product_id_1: {
@@ -42,7 +43,7 @@ const App = () => {
         quantity:
           newCart[product.id] !== undefined
             ? newCart[product.id].quantity + 1
-            : 0,
+            : 1,
       };
 
       return newCart;
@@ -52,9 +53,10 @@ const App = () => {
   return (
     <Router>
       <Header />
+      <CartSidebar items={cart} />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='shop' element={<Shop />}></Route>
+        <Route path='shop' element={<Shop ProductList={ProductList} />}></Route>
         <Route
           path='/shop/product/:productId'
           element={
