@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 import ProductPage from './pages/ProductPage';
 import ShoppingCart from './interfaces/ShoppingCart';
 import CartSidebar from './components/CartSidebar';
+import CartPage from './pages/CartPage';
 
 const ProductList: { [productId: string]: Product } = {
   product_id_1: {
@@ -56,6 +57,7 @@ const App = () => {
       <CartSidebar items={cart} />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/cart' element={<CartPage items={cart} />} />
         <Route
           path='shop'
           element={<ShopPage ProductList={ProductList} />}></Route>

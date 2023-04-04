@@ -10,6 +10,11 @@ const Header = () => {
         className='hover:text-sky-300 hover:underline underline-offset-2'>
         Shop
       </Link>
+      <Link
+        to='/cart'
+        className='hover:text-sky-300 hover:underline underline-offset-2'>
+        My Cart
+      </Link>
     </header>
   );
 };
