@@ -21,6 +21,13 @@ const CartSidebar = (props: CartSidebarProps) => {
           </div>
         );
       })}
+      <div>
+        Subtotal:{' '}
+        {Object.entries(items).reduce(
+          (reducer, item) => reducer + item[1].product.price * item[1].quantity,
+          0
+        )}
+      </div>
     </div>
   );
 };
