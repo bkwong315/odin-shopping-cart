@@ -21,6 +21,13 @@ const CartPage = (props: CartPageProps) => {
           </div>
         );
       })}
+      <span>
+        Subtotal:{' '}
+        {Object.entries(items).reduce(
+          (reducer, item) => reducer + item[1].product.price * item[1].quantity,
+          0
+        )}
+      </span>
     </div>
   );
 };
