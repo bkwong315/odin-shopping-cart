@@ -35,8 +35,11 @@ const ProductList: { [productId: string]: Product } = {
 
 const App = () => {
   const [cart, setCart] = useState<ShoppingCart>({});
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   const addToCart = (product: Product) => {
+    setIsSidebarOpen(true);
+
     setCart(() => {
       const newCart = { ...cart };
       newCart[product.id] = {
@@ -54,7 +57,13 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <CartSidebar items={cart} />
+      {Object.keys(cart).length > 0 && (
+        <CartSidebar
+          items={cart}
+          isOpen={isSidebarOpen}
+          setIsOpen={setIsSidebarOpen}
+        />
+      )}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cart' element={<CartPage items={cart} />} />
