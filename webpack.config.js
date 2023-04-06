@@ -1,6 +1,7 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { argv } = require('process');
 
 module.exports = (argv) => {
@@ -48,6 +49,9 @@ module.exports = (argv) => {
       extensions: ['.tsx', '.ts', '.js'],
     },
     plugins: [
+      new CopyPlugin({
+        patterns: [{ from: './public/', to: '' }],
+      }),
       new HtmlWebpackPlugin({
         fileName: 'index.html',
         title: 'Shop Name',
