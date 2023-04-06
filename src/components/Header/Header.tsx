@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const location = useLocation();
-
   return (
     <header className='text-white'>
       <div className='px-[4%] py-8 bg-black'>
@@ -12,9 +10,7 @@ const Header = () => {
             <Link to='/'>
               <img
                 src='./assets/imgs/amd-header-logo.svg'
-                className={`h-6 ${
-                  location.pathname.split('/')[1] ? 'mr-16' : ''
-                }`}
+                className={`h-6`}
                 alt='AMD'
               />
             </Link>
