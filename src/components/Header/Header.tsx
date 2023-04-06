@@ -11,6 +11,12 @@ const Header = () => {
           alt='AMD'
         />
       </Link>
+      <ul className='flex flex-auto gap-16 font-normal'>
+        <li>Products</li>
+        <li>Solutions</li>
+        <li>Downloads & Support</li>
+        <li>Shop</li>
+      </ul>
       <div className='flex gap-4'>
         <Link
           to='/shop'
