@@ -34,10 +34,11 @@ const Header = () => {
       <div className='px-[4%] py-8 bg-[#1a1a1b]'>
         <div className='flex justify-between max-w-[1440px] m-auto'>
           <ul className='flex flex-auto gap-16 font-normal'>
-            <li>Products</li>
-            <li>Solutions</li>
-            <li>Downloads & Support</li>
-            <li>Shop</li>
+            <li>Processors</li>
+            <li>Graphics Cards</li>
+            <li>All Products</li>
+            <li>Promotions</li>
+            <li>Store Help</li>
           </ul>
         </div>
       </div>
