@@ -13,7 +13,7 @@ const CarouselItem = () => {
           Get up to $100 in additional savings when you purchase select AMD
           RyzenTM Processors and AMD Radeon&trade; Graphics Together!
         </p>
-        <button className='px-10 py-2 border-solid border-white border w-max font-bold uppercase'>
+        <button className='px-10 py-2 border-solid border-white border w-max font-bold uppercase hover:bg-white/[.15]'>
           Learn More
         </button>
       </div>
