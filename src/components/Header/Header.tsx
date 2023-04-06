@@ -25,8 +25,12 @@ const Header = () => {
           <div className='flex gap-4'>
             <Link
               to='/cart'
-              className='hover:text-sky-300 hover:underline underline-offset-2'>
-              My Cart
+              className='flex items-center p-2 hover:bg-white/25 rounded'>
+              <img
+                src='./assets/icons/cart-shopping-solid.svg'
+                className={`h-4`}
+                alt='shopping cart'
+              />
             </Link>
           </div>
         </div>
