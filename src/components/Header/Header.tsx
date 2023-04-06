@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header className='flex justify-between px-8 py-4 bg-purple-700 text-white font-bold'>
-      <h2>Shop Name</h2>
+      <img src='./assets/imgs/amd-header-logo.svg' className='h-6' alt='AMD' />
       <div className='flex gap-4'>
         <Link
           to='/shop'
