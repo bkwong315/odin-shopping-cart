@@ -40,6 +40,11 @@ const Header = () => {
             <li>Promotions</li>
             <li>Store Help</li>
           </ul>
+          <div>
+            <Link to={'/'}>Sign In</Link>{' '}
+            <span className='text-[gray]'>or</span>{' '}
+            <Link to={'/'}>Register</Link>
+          </div>
         </div>
       </div>
     </header>
