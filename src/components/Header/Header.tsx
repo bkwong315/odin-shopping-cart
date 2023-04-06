@@ -22,7 +22,7 @@ const Header = () => {
               </Link>
             )}
           </div>
-          <div className='flex gap-4'>
+          <div className='flex gap-10'>
             <Link
               to='/cart'
               className='flex items-center p-2 hover:bg-white/25 rounded'>
@@ -32,6 +32,13 @@ const Header = () => {
                 alt='shopping cart'
               />
             </Link>
+            <div className='flex items-center p-2 hover:bg-white/25 rounded'>
+              <img
+                src='./assets/icons/search.svg'
+                className={`h-4`}
+                alt='shopping cart'
+              />
+            </div>
           </div>
         </div>
       </div>
