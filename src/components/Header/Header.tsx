@@ -25,14 +25,14 @@ const Header = () => {
           <div className='flex gap-10'>
             <Link
               to='/cart'
-              className='flex items-center p-2 hover:bg-white/25 rounded'>
+              className='flex items-center p-2 hover:bg-white/[.15] rounded'>
               <img
                 src='./assets/icons/cart-shopping-solid.svg'
                 className={`h-4`}
                 alt='shopping cart'
               />
             </Link>
-            <div className='flex items-center p-2 hover:bg-white/25 rounded'>
+            <div className='flex items-center p-2 hover:bg-white/[.15] rounded'>
               <img
                 src='./assets/icons/search.svg'
                 className={`h-4`}
