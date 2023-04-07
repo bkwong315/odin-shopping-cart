@@ -3,7 +3,7 @@ import React from 'react';
 import CarouselItem from './CarouselItem';
 
 const Carousel = () => {
-  const carouselItemDetails = [
+  const carouselItemData = [
     {
       imgUrl: './assets/imgs/carousel/ryzen-processors.jpg',
       altText: 'ryzen processors',
@@ -50,7 +50,7 @@ const Carousel = () => {
           className='h-8 hover:brightness-[.25]'
         />
       </button>
-      <CarouselItem data={carouselItemDetails[3]} />
+      <CarouselItem data={carouselItemData[3]} />
     </div>
   );
 };
