@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'klavika-medium';
+  src: url('../public/assets/fonts/klavika-medium.woff2'),
+    url('../public/assets/fonts/klavika-medium.woff');
+}
