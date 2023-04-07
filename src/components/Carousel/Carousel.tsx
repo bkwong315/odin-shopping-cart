@@ -50,7 +50,7 @@ const Carousel = () => {
           className='h-8 hover:brightness-[.25]'
         />
       </button>
-      <CarouselItem data={carouselItemData[3]} />
+      <CarouselItem data={carouselItemData[1]} />
     </div>
   );
 };
