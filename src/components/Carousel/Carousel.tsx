@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import CarouselItem from './CarouselItem';
 
@@ -34,35 +34,49 @@ const Carousel = () => {
     },
   ];
 
+  const [currIdx, setCurrIdx] = useState(0);
+  const prevIdx = currIdx - 1 < 0 ? carouselItemData.length - 1 : currIdx - 1;
+  const nextIdx = currIdx + 1 >= carouselItemData.length ? 0 : currIdx + 1;
+
   return (
     <div className='relative bg-black'>
-      <div className='absolute w-full h-full z-10 '>
-        <button className='absolute left-[2%] top-1/2 -translate-y-1/2'>
+      <div className='absolute w-full h-full'>
+        <button className='absolute left-[2%] top-1/2 -translate-y-1/2 z-10'>
           <img
             src='./assets/icons/chevron-left-solid.svg'
             alt='left-chevron'
             className='h-8 hover:brightness-[.25]'
           />
         </button>
-        <button className='absolute right-[2%] top-1/2 -translate-y-1/2'>
+        <button className='absolute right-[2%] top-1/2 -translate-y-1/2 z-10'>
           <img
             src='./assets/icons/chevron-right-solid.svg'
             alt='right-chevron'
             className='h-8 hover:brightness-[.25]'
           />
         </button>
+        <div className='absolute flex gap-2 bottom-12 left-1/2 -translate-x-1/2 z-10'>
+          {carouselItemData.map((item, idx) => {
+            return (
+              <input
+                type='radio'
+                name='img_idx'
+                key={idx}
+                className='w-2.5 h-2.5 rounded appearance-none border-solid border-white border checked:bg-white'
+                checked={idx === currIdx}
+              />
+            );
+          })}
+        </div>
       </div>
       <div className='relative'>
         <div className='grid grid-flow-col'>
+          <CarouselItem data={carouselItemData[prevIdx]} classes={''} />
+          <CarouselItem data={carouselItemData[currIdx]} classes={''} />
           <CarouselItem
-            data={carouselItemData[3]}
-            classes={'-translate-x-[-200%]'}
+            data={carouselItemData[nextIdx]}
+            classes={'translate-x-full'}
           />
-          <CarouselItem
-            data={carouselItemData[0]}
-            classes={'-translate-x-full'}
-          />
-          <CarouselItem data={carouselItemData[1]} classes={'translate-x-0'} />
         </div>
       </div>
     </div>
