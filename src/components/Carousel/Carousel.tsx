@@ -59,7 +59,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className='relative bg-black w-screen'>
+    <div className='relative bg-black w-screen max-w-screen overflow-auto'>
       <div className='absolute w-full h-full'>
         <button
           onClick={scrollBackward}
@@ -96,9 +96,15 @@ const Carousel = () => {
         </div>
       </div>
       <div className='relative'>
-        <div className={`grid grid-flow-col -translate-x-[100%]`}>
+        <div className={`grid grid-flow-col overflow-x-hidden`}>
           {items.map((item, idx) => {
-            return <CarouselItem data={item} classes='' key={idx} />;
+            return (
+              <CarouselItem
+                data={item}
+                classes='-translate-x-[100%]'
+                key={idx}
+              />
+            );
           })}
         </div>
       </div>
