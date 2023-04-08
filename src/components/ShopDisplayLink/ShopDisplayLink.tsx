@@ -11,7 +11,7 @@ const ShopDisplayLink = (props: ShopDisplayLinkProps) => {
   const { imgUrl, headerText, linkUrl } = props;
 
   return (
-    <div className='relative flex-1'>
+    <div className='relative flex-1 w-full max-w-full overflow-auto'>
       <img src={imgUrl} alt='graphics card' className='w-full' />
       <div className='absolute grid place-items-center w-full h-full top-0 text-white'>
         <div className='grid gap-2 place-items-center'>
