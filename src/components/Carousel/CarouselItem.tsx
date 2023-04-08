@@ -8,13 +8,15 @@ interface CarouselItemProps {
     description: string;
     btnText: string;
   };
+  classes?: string;
 }
 
 const CarouselItem = (props: CarouselItemProps) => {
+  const { classes = '' } = props;
   const { imgUrl, altText, headerText, description, btnText } = props.data;
 
   return (
-    <div className='flex gap-4 text-white'>
+    <div className={`flex gap-4 text-white w-screen ${classes}`}>
       <img src={imgUrl} alt={altText} />
       <div className='flex flex-col justify-center gap-4 w-[45%] mb-12'>
         <h3 className='font-klavika-medium text-4xl '>{headerText}</h3>

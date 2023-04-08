@@ -36,21 +36,35 @@ const Carousel = () => {
 
   return (
     <div className='relative bg-black'>
-      <button className='absolute left-[2%] top-1/2 -translate-y-1/2'>
-        <img
-          src='./assets/icons/chevron-left-solid.svg'
-          alt='left-chevron'
-          className='h-8 hover:brightness-[.25]'
-        />
-      </button>
-      <button className='absolute right-[2%] top-1/2 -translate-y-1/2'>
-        <img
-          src='./assets/icons/chevron-right-solid.svg'
-          alt='right-chevron'
-          className='h-8 hover:brightness-[.25]'
-        />
-      </button>
-      <CarouselItem data={carouselItemData[1]} />
+      <div className='absolute w-full h-full z-10 '>
+        <button className='absolute left-[2%] top-1/2 -translate-y-1/2'>
+          <img
+            src='./assets/icons/chevron-left-solid.svg'
+            alt='left-chevron'
+            className='h-8 hover:brightness-[.25]'
+          />
+        </button>
+        <button className='absolute right-[2%] top-1/2 -translate-y-1/2'>
+          <img
+            src='./assets/icons/chevron-right-solid.svg'
+            alt='right-chevron'
+            className='h-8 hover:brightness-[.25]'
+          />
+        </button>
+      </div>
+      <div className='relative'>
+        <div className='grid grid-flow-col'>
+          <CarouselItem
+            data={carouselItemData[3]}
+            classes={'-translate-x-[-200%]'}
+          />
+          <CarouselItem
+            data={carouselItemData[0]}
+            classes={'-translate-x-full'}
+          />
+          <CarouselItem data={carouselItemData[1]} classes={'translate-x-0'} />
+        </div>
+      </div>
     </div>
   );
 };
