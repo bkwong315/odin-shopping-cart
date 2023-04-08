@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
 import CarouselItem from './CarouselItem';
 
@@ -58,10 +58,8 @@ const Carousel = () => {
     setCurrIdx(Number.parseInt(e.target.value));
   };
 
-  useEffect(() => {}, [currIdx]);
-
   return (
-    <div className='relative bg-black'>
+    <div className='relative bg-black w-screen'>
       <div className='absolute w-full h-full'>
         <button
           onClick={scrollBackward}
