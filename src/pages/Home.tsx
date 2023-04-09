@@ -12,11 +12,13 @@ const Home = () => {
           imgUrl='./assets/imgs/processor.jpg'
           headerText={'processors'}
           linkUrl='/processors'
+          rotationDir='counter-clockwise'
         />
         <ShopDisplayLink
           imgUrl='./assets/imgs/graphics-card.jpg'
           headerText={'graphics cards'}
           linkUrl='/graphics-cards'
+          rotationDir='clockwise'
         />
       </div>
     </div>
