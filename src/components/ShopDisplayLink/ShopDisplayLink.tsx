@@ -16,11 +16,11 @@ const ShopDisplayLink = (props: ShopDisplayLinkProps) => {
       <img
         src={imgUrl}
         alt='graphics card'
-        className={`w-full ${
+        className={`${
           rotationDir === 'clockwise'
             ? 'group-hover:rotate-[4deg]'
             : 'group-hover:-rotate-[4deg]'
-        } group-hover:scale-[1.13] group-hover:grayscale transition-all duration-700`}
+        } w-full max-w-full overflow-hidden group-hover:scale-[1.13] group-hover:grayscale transition-all duration-700`}
       />
       <div className='absolute grid place-items-center w-full h-full top-0 text-white'>
         <div className='grid gap-2 place-items-center'>
