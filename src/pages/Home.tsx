@@ -2,6 +2,7 @@ import React from 'react';
 
 import Carousel from '../components/Carousel/Carousel';
 import ShopDisplayLink from '../components/ShopDisplayLink/ShopDisplayLink';
+import FeaturedProducts from '../components/FeaturedProducts/FeaturedProducts';
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
           rotationDir='clockwise'
         />
       </div>
+      <FeaturedProducts />
     </div>
   );
 };
