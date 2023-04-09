@@ -15,7 +15,7 @@ const ProductCard = (props: ProductCardProps) => {
     props;
   return (
     <div
-      className={`relative flex flex-col items-center gap-4 border text-center text-gray-600 py-4 
+      className={`relative flex flex-col items-center gap-4 border text-center text-gray-600 py-4 whitespace-pre-wrap
         ${
           salePrice &&
           `after:content-["Sale!"] after:absolute after:top-0 after:left-0 after:px-2 
