@@ -22,7 +22,7 @@ const FeaturedProducts = (props: FeaturedProductsProps) => {
           View All Products
         </Link>
       </header>
-      <div className='flex gap-8'>
+      <div className='flex gap-8 overflow-hidden'>
         {data.map((product, idx) => {
           return (
             <ProductCard
