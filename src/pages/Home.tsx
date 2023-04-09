@@ -5,6 +5,37 @@ import ShopDisplayLink from '../components/ShopDisplayLink/ShopDisplayLink';
 import FeaturedProducts from '../components/FeaturedProducts/FeaturedProducts';
 
 const Home = () => {
+  const featuredProducts = [
+    {
+      name: 'AMD Radeon™ RX 7900 XT Graphics',
+      imgUrl: './assets/imgs/products/rx-7900xt.webp',
+      imgAlt: 'RX 7900 XT',
+      featuredInfo:
+        'THE LAST OF US™ PART I game bundle with purchase. See full offer terms at ',
+      infoLinkUrl: 'www.amdrewards.com/terms',
+      price: (899.0).toFixed(2),
+      salePrice: (849.0).toFixed(2),
+    },
+    {
+      name: 'AMD Ryzen™ 9 7950X3D Processor',
+      imgUrl: './assets/imgs/products/ryzen-9-7950x3d.webp',
+      imgAlt: 'RX 7900 XT',
+      featuredInfo: `Graphics Model: Integrated AMD Radeon™ Graphics
+      # of CPU Cores: 16`,
+      price: (699.0).toFixed(2),
+    },
+    {
+      name: 'AMD Ryzen™ 9 7900X Processor',
+      imgUrl: './assets/imgs/products/ryzen-9-7900x.webp',
+      imgAlt: 'Ryzen 9 7900X',
+      featuredInfo:
+        'STAR WARS Jedi: Survivor™ game bundle with purchase. See full offer terms at ',
+      infoLinkUrl: 'www.amdrewards.com/terms',
+      price: (549.0).toFixed(2),
+      salePrice: (449.0).toFixed(2),
+    },
+  ];
+
   return (
     <div className='grid justify-items-center gap-12 w-full max-w-full overflow-auto'>
       <Carousel />
@@ -22,7 +53,7 @@ const Home = () => {
           rotationDir='clockwise'
         />
       </div>
-      <FeaturedProducts />
+      <FeaturedProducts data={featuredProducts} />
     </div>
   );
 };

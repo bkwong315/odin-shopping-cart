@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FeaturedProducts = () => {
+import ProductCard, { ProductCardProps } from '../ProductCard/ProductCard';
+
+interface FeaturedProductsProps {
+  data: ProductCardProps[];
+}
+
+const FeaturedProducts = (props: FeaturedProductsProps) => {
+  const { data } = props;
+
   return (
-    <div className='flex justify-center gap-8 w-full max-w-[1440px]'>
+    <div className='flex flex-col justify-center gap-8 w-full max-w-[1440px]'>
       <header className='flex justify-between items-center w-full'>
         <h3 className='uppercase tracking-wide font-klavika-medium text-4xl'>
           Featured Products
@@ -14,6 +22,22 @@ const FeaturedProducts = () => {
           View All Products
         </Link>
       </header>
+      <div className='flex gap-8'>
+        {data.map((product, idx) => {
+          return (
+            <ProductCard
+              name={product.name}
+              imgUrl={product.imgUrl}
+              imgAlt={product.imgAlt}
+              featuredInfo={product.featuredInfo}
+              infoLinkUrl={product.infoLinkUrl}
+              price={product.price}
+              salePrice={product.salePrice}
+              key={idx}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
