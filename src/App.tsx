@@ -9,6 +9,7 @@ import ProductPage from './pages/ProductPage';
 import ShoppingCart from './interfaces/ShoppingCart';
 import CartSidebar from './components/CartSidebar';
 import CartPage from './pages/CartPage';
+import Footer from './components/Footer/Footer';
 
 const ProductList: { [productId: string]: Product } = {
   product_id_1: {
@@ -77,6 +78,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Footer />
     </Router>
   );
 };
