@@ -12,7 +12,7 @@ const ShopDisplayLink = (props: ShopDisplayLinkProps) => {
   const { imgUrl, headerText, linkUrl, rotationDir } = props;
 
   return (
-    <div className='group relative flex-1 w-full max-w-full overflow-hidden'>
+    <div className='group relative flex-1 w-full max-w-full overflow-hidden px-4'>
       <img
         src={imgUrl}
         alt='graphics card'

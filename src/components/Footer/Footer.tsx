@@ -6,7 +6,7 @@ import FooterLink from './FooterLink';
 const Footer = () => {
   return (
     <footer className='grid gap-8 bg-black text-white py-16 w-full mt-12'>
-      <div className='flex justify-between items-center max-w-[1440px] w-full m-auto'>
+      <div className='flex justify-between items-center max-w-[1440px] px-4 w-full m-auto'>
         <div className='flex items-center gap-8'>
           <Link to='/'>
             <img
@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
         <SocialLinkList />
       </div>
-      <div className='flex justify-between items-center max-w-[1440px] w-full m-auto my-8'>
+      <div className='flex justify-between items-center max-w-[1440px] px-4 w-full m-auto my-8'>
         <div className='flex gap-1 w-full justify-center'>
           <img src='./assets/imgs/payment-methods/visa.webp' alt='Visa' />
           <img
@@ -41,7 +41,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className='flex gap-2 justify-center items-center max-w-[1440px] w-full m-auto text-zinc-500'>
+      <div className='flex gap-2 justify-center items-center max-w-[1440px] px-4 w-full m-auto text-zinc-500'>
         <FooterLink
           linkUrl='/terms-and-conditions'
           external={false}
@@ -94,7 +94,7 @@ const Footer = () => {
           Cookies Settings
         </button>
       </div>
-      <p className='flex justify-center items-center max-w-[1440px] w-full m-auto text-xs text-zinc-500'>
+      <p className='flex justify-center items-center max-w-[1440px] w-full m-auto px-4 text-xs text-zinc-500'>
         © {new Date().getFullYear()} Advanced Micro Devices, Inc
       </p>
     </footer>
