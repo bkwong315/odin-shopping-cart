@@ -14,13 +14,11 @@ const Header = () => {
                 alt='AMD'
               />
             </Link>
-            {location.pathname === '/' && (
-              <Link
-                to='/shop'
-                className='hover:text-sky-300 hover:underline underline-offset-2 font-bold text-lg pl-4 border-solid border-l-[1px] border-[rgba(255,255,255,.4)]'>
-                Store
-              </Link>
-            )}
+            <Link
+              to='/shop'
+              className='hover:text-sky-300 hover:underline underline-offset-2 font-bold text-lg pl-4 border-solid border-l-[1px] border-[rgba(255,255,255,.4)]'>
+              Store
+            </Link>
           </div>
           <div className='flex gap-10'>
             <Link
