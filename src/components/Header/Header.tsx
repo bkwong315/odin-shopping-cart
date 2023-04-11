@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import HeaderLink from './HeaderLink';
+
 const Header = () => {
   return (
     <header className='text-white'>
@@ -43,11 +45,11 @@ const Header = () => {
       <div className='px-[4%] py-8 bg-[#1a1a1b]'>
         <div className='flex justify-between max-w-[1440px] m-auto'>
           <ul className='flex flex-auto gap-16 font-normal'>
-            <li>Processors</li>
-            <li>Graphics Cards</li>
-            <li>All Products</li>
-            <li>Promotions</li>
-            <li>Store Help</li>
+            <HeaderLink linkUrl='/processors' text='Processors' />
+            <HeaderLink linkUrl='/graphics-cards' text='Graphics Cards' />
+            <HeaderLink linkUrl='/all-products' text='All Products' />
+            <HeaderLink linkUrl='/promotions' text='Promotions' />
+            <HeaderLink linkUrl='/faq' text='Store Help' />
           </ul>
           <div>
             <Link to={'/'}>Sign In</Link>{' '}
