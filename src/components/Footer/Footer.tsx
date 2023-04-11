@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SocialLinkList from './SocialLinkList';
+import FooterLink from './FooterLink';
 
 const Footer = () => {
   return (
@@ -40,6 +41,62 @@ const Footer = () => {
           />
         </div>
       </div>
+      <div className='flex gap-2 justify-center items-center max-w-[1440px] w-full m-auto text-zinc-500'>
+        <FooterLink
+          linkUrl='/terms-and-conditions'
+          external={false}
+          text='Terms and Conditions'
+        />
+        |
+        <FooterLink
+          linkUrl='https://www.amd.com/en/corporate/copyright'
+          external={true}
+          text='Terms of Use'
+        />
+        |
+        <FooterLink
+          linkUrl='https://www.amd.com/en/corporate/privacy'
+          external={true}
+          text='Privacy'
+        />
+        |
+        <FooterLink
+          linkUrl='https://www.amd.com/en/corporate/cookies'
+          external={true}
+          text='Cookie Policy'
+        />
+        |
+        <FooterLink
+          linkUrl='https://www.amd.com/en/corporate/trademarks'
+          external={true}
+          text='Trademarks'
+        />
+        |
+        <FooterLink
+          linkUrl='https://www.amd.com/system/files/documents/statement-human-trafficking-forced-labor.pdf'
+          external={true}
+          text='Statement on Forced Labor'
+        />
+        |
+        <FooterLink
+          linkUrl='https://www.amd.com/en/corporate/competition'
+          external={true}
+          text='Fair and Open Competition'
+        />
+        |
+        <FooterLink
+          linkUrl='https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf'
+          external={true}
+          text='UK Tax Strategy'
+        />
+        |
+        <button className='text-xs text-zinc-500 transition-[color] duration-[400ms] hover:text-white hover:underline'>
+          Cookies Settings
+        </button>
+      </div>
+      <p className='flex justify-center items-center max-w-[1440px] w-full m-auto text-xs text-zinc-500'>
+        © {new Date().getFullYear()} Advanced Micro Devices, Inc
+      </p>
     </footer>
   );
 };
