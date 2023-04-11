@@ -5,7 +5,7 @@ import FooterLink from './FooterLink';
 
 const Footer = () => {
   return (
-    <footer className='grid gap-16 bg-black text-white py-16 w-full'>
+    <footer className='grid gap-8 bg-black text-white py-16 w-full mt-12'>
       <div className='flex justify-between items-center max-w-[1440px] w-full m-auto'>
         <div className='flex items-center gap-8'>
           <Link to='/'>
@@ -23,8 +23,8 @@ const Footer = () => {
         </div>
         <SocialLinkList />
       </div>
-      <div className='flex justify-between items-center max-w-[1440px] w-full m-auto'>
-        <div className='flex w-full justify-center'>
+      <div className='flex justify-between items-center max-w-[1440px] w-full m-auto my-8'>
+        <div className='flex gap-1 w-full justify-center'>
           <img src='./assets/imgs/payment-methods/visa.webp' alt='Visa' />
           <img
             src='./assets/imgs/payment-methods/mastercard.webp'
