@@ -35,6 +35,7 @@ module.exports = {
     },
     fontFamily: {
       'klavika-medium': ['klavika-medium', 'arial', 'sans-serif'],
+      'noto-sans-medium': ['NotoSans-medium', 'sans-serif'],
     },
   },
   variants: {

@@ -7,3 +7,14 @@
   src: url('../public/assets/fonts/klavika-medium.woff2'),
     url('../public/assets/fonts/klavika-medium.woff');
 }
+
+@font-face {
+  font-family: 'NotoSans-medium';
+  src: url('../public/assets/fonts/NotoSans-Medium.ttf');
+}
+
+@layer utilities {
+  .select-triangle {
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  }
+}
