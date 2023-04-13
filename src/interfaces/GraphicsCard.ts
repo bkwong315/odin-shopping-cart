@@ -1,5 +1,6 @@
 interface GraphicsCard {
   id: string;
+  product_type: string;
   name: string;
   sku: string;
   stock: string;

@@ -8,6 +8,7 @@ const products: {
   graphics_cards: {
     radeon_rx_7900xtx: {
       id: 'radeon_rx_7900xtx',
+      product_type: 'graphics-card',
       name: 'AMD Radeon™ RX 7900 XTX Graphics',
       sku: '100-300000069',
       stock: '0',
@@ -110,6 +111,7 @@ const products: {
     },
     radeon_rx_7900xt: {
       id: 'radeon_rx_7900xt',
+      product_type: 'graphics-card',
       name: 'AMD Radeon™ RX 7900 XT Graphics',
       sku: '100-300000071',
       stock: '25',
@@ -212,6 +214,7 @@ const products: {
     },
     radeon_rx_6950xt: {
       id: 'radeon_rx_6950xt',
+      product_type: 'graphics-card',
       name: 'AMD Radeon™ RX 6950 XT Graphics',
       sku: '100-438411',
       stock: '34',
@@ -316,6 +319,7 @@ const products: {
     },
     radeon_rx_6750xt: {
       id: 'radeon_rx_6750xt',
+      product_type: 'graphics-card',
       name: 'AMD Radeon™ RX 6750 XT Graphics',
       sku: '100-438412',
       stock: '47',
@@ -419,6 +423,7 @@ const products: {
   processors: {
     ryzen_7_7800x3d: {
       id: 'ryzen_7_7800x3d',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 7 7800X3D Processor',
       sku: '100-100000910WOF',
       stock: '0',
@@ -492,6 +497,7 @@ const products: {
     },
     ryzen_9_7900x3d: {
       id: 'ryzen_9_7900x3d',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 9 7900X3D Processor',
       sku: '100-100000909WOF',
       stock: '0',
@@ -565,6 +571,7 @@ const products: {
     },
     ryzen_9_7950x3d: {
       id: 'ryzen_9_7950x3d',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 9 7950X3D Processor',
       sku: '100-100000908WOF',
       price: '699.00',
@@ -639,6 +646,7 @@ const products: {
     },
     ryzen_9_7950x: {
       id: 'ryzen_9_7950x',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 9 7950X Processor',
       sku: '100-100000514WOF',
       stock: '0',
@@ -717,6 +725,7 @@ const products: {
     },
     ryzen_5_7600x: {
       id: 'ryzen_5_7600x',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 5 7600X Processor',
       sku: '100-100000593WOF',
       stock: '25',
@@ -789,6 +798,7 @@ const products: {
     },
     ryzen_5_7700x: {
       id: 'ryzen_5_7700x',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 5 7700X Processor',
       sku: '100-100000591WOF',
       stock: '64',
@@ -868,6 +878,7 @@ const products: {
     },
     ryzen_9_7900x: {
       id: 'ryzen_9_7900x',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 9 7900X Processor',
       sku: '100-100000589WOF',
       stock: '16',
@@ -947,6 +958,7 @@ const products: {
     },
     ryzen_5_5600g: {
       id: 'ryzen_5_5600g',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 5 5600G Processor',
       sku: '100-100000252BOX',
       stock: '35',
@@ -1033,6 +1045,7 @@ const products: {
     },
     ryzen_5_5600x: {
       id: 'ryzen_5_5600x',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 5 5600X Processor',
       sku: '100-100000065BOX',
       stock: '23',
@@ -1115,6 +1128,7 @@ const products: {
     },
     ryzen_7_5700g: {
       id: 'ryzen_7_5700g',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 7 5700G Processor',
       sku: '100-100000263BOX',
       stock: '64',
@@ -1201,6 +1215,7 @@ const products: {
     },
     ryzen_7_5800x: {
       id: 'ryzen_7_5800x',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 7 5800X Processor',
       sku: '100-100000063WOF',
       stock: '58',
@@ -1281,6 +1296,7 @@ const products: {
     },
     ryzen_7_5800x3d: {
       id: 'ryzen_7_5800x3d',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 7 5800X3D Processor',
       sku: '100-100000651WOF',
       stock: '34',
@@ -1361,6 +1377,7 @@ const products: {
     },
     ryzen_9_5900x: {
       id: 'ryzen_9_5900x',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 9 5900X Processor',
       sku: '100-100000061WOF',
       stock: '35',
@@ -1441,6 +1458,7 @@ const products: {
     },
     ryzen_9_5950x: {
       id: 'ryzen_9_5950x',
+      product_type: 'processor',
       name: 'AMD RYZEN™ 9 5950X Processor',
       sku: '100-100000059WOF',
       stock: '57',

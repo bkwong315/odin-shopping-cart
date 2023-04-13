@@ -1,5 +1,6 @@
 interface Processor {
   id: string;
+  product_type: string;
   name: string;
   sku: string;
   stock: string;
