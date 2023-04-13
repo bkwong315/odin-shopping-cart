@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import Product from '../interfaces/Product';
 
@@ -8,6 +8,10 @@ interface ShopProps {
 }
 
 const Shop = (props: ShopProps) => {
+  const location = useLocation();
+
+  console.log(location);
+
   const { ProductList } = props;
   const [sortMethod, setSortMethod] = useState('featured');
 
@@ -20,9 +24,14 @@ const Shop = (props: ShopProps) => {
       <header className='text-sm'>
         <div className='grid gap-3'>
           <div className=''>
-            Home &gt; <span className='text-neutral-500'>Processors</span>
+            Home &gt;{' '}
+            <span className='text-neutral-500 capitalize'>
+              {location.pathname.replace('/', '').replace('-', ' ')}
+            </span>
           </div>
-          <h3 className='uppercase text-4xl font-klavika-medium'>Processors</h3>
+          <h3 className='uppercase text-4xl font-klavika-medium'>
+            {location.pathname.replace('/', '').replace('-', ' ')}
+          </h3>
         </div>
         <div className='flex justify-between w-full mt-12'>
           <div>Displaying 1 - 9 of 14</div>
