@@ -10,8 +10,6 @@ interface ShopProps {
 const Shop = (props: ShopProps) => {
   const location = useLocation();
 
-  console.log(location);
-
   const { ProductList } = props;
   const [sortMethod, setSortMethod] = useState('featured');
 
