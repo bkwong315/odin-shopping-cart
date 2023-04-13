@@ -34,7 +34,7 @@ module.exports = (argv) => {
           },
         },
         {
-          test: /\.(ts|tsx)x$/,
+          test: /\.(ts|tsx)$/,
           exclude: /node_modules/,
           loader: 'ts-loader',
         },
