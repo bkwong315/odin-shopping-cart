@@ -1,7 +1,7 @@
 import Processor from './interfaces/Processor';
 import GraphicsCard from './interfaces/GraphicsCard';
 
-const products: {
+const ProductList: {
   graphics_cards: { [key: string]: GraphicsCard };
   processors: { [key: string]: Processor };
 } = {
@@ -1540,4 +1540,4 @@ const products: {
   },
 };
 
-export default products;
+export default ProductList;
