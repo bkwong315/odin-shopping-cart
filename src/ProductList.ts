@@ -796,17 +796,17 @@ const ProductList: {
         },
       },
     },
-    ryzen_5_7700x: {
-      id: 'ryzen_5_7700x',
+    ryzen_7_7700x: {
+      id: 'ryzen_7_7700x',
       product_type: 'processor',
-      name: 'AMD RYZEN™ 5 7700X Processor',
+      name: 'AMD RYZEN™ 7 7700X Processor',
       sku: '100-100000591WOF',
       stock: '64',
       price: '399.00',
       salePrice: '349.00',
       imgs: {
-        default: './assets/imgs/products/ryzen-5-7700x-default.webp',
-        zoom_out: './assets/imgs/products/ryzen-5-7700x-zoom-out.webp',
+        default: './assets/imgs/products/ryzen-7-7700x-default.webp',
+        zoom_out: './assets/imgs/products/ryzen-7-7700x-zoom-out.webp',
       },
       details: {
         key_points: [
