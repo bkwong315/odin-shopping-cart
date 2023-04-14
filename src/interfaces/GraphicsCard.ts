@@ -81,4 +81,10 @@ interface GraphicsCard {
   };
 }
 
+function isGraphicsCard(object: any): object is GraphicsCard {
+  return object.product_type === 'graphics-card';
+}
+
 export default GraphicsCard;
+
+export { isGraphicsCard };

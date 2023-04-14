@@ -47,7 +47,14 @@ const App = () => {
           }></Route>
         <Route
           path='all-products'
-          element={<ShopPage productList={ProductList} />}></Route>
+          element={
+            <ShopPage
+              productList={{
+                ...ProductList.graphics_cards,
+                ...ProductList.processors,
+              }}
+            />
+          }></Route>
         <Route
           path='/shop/product/:productId'
           element={

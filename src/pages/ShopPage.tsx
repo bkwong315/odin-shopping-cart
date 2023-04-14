@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import Processor from '../interfaces/Processor';
-import GraphicsCard from '../interfaces/GraphicsCard';
+import Processor, { isProcessor } from '../interfaces/Processor';
+import GraphicsCard, { isGraphicsCard } from '../interfaces/GraphicsCard';
+import ProductCard from '../components/ProductCard/ProductCard';
 
 interface ShopProps {
   productList:
-    | { [key: string]: Processor }
-    | { [key: string]: GraphicsCard }
+    | { [key: string]: Processor | GraphicsCard }
     | {
         graphics_cards: { [key: string]: GraphicsCard };
         processors: { [key: string]: Processor };
@@ -19,6 +19,16 @@ const Shop = (props: ShopProps) => {
 
   const { productList } = props;
   const [sortMethod, setSortMethod] = useState('featured');
+  const startIdx = 0;
+
+  const displayedItems: Array<Processor | GraphicsCard> = Object.entries(
+    productList
+  )
+    .slice(startIdx, startIdx + 9)
+    .reduce((reducer, item) => {
+      reducer.push(item[1]);
+      return reducer;
+    }, []);
 
   const selectOnChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortMethod(e.target.value);
@@ -39,7 +49,10 @@ const Shop = (props: ShopProps) => {
           </h3>
         </div>
         <div className='flex justify-between w-full mt-12'>
-          <div>Displaying 1 - 9 of 14</div>
+          <div>
+            Displaying 1 - {Object.entries(productList).length} of{' '}
+            {Object.entries(productList).length}
+          </div>
           <div className='flex items-center gap-2'>
             <span className='font-noto-sans-medium font-medium'>Sort by:</span>
             <span className='relative after:content-[""] after:w-4 after:h-2 after:scale-75 after:top-1/2 after:-translate-y-1/2 after:right-2 after:bg-neutral-600 after:select-triangle after:absolute'>
@@ -60,6 +73,37 @@ const Shop = (props: ShopProps) => {
           </div>
         </div>
       </header>
+      <div className='grid grid-rows-3 gap-10'>
+        {displayedItems.map((_, containerIdx) => {
+          if (containerIdx % 3 !== 0) return;
+          return (
+            <div
+              className='grid grid-flow-col grid-cols-3 gap-8 overflow-x-visible overflow-y-clip'
+              key={`container-${containerIdx}`}>
+              {displayedItems.map((item, idx) => {
+                if (idx < containerIdx || idx >= containerIdx + 3) return;
+                let featuredInfo = '';
+                if (isProcessor(item)) {
+                  featuredInfo = `<p>${item.details.graphics.data.graphics_model[0]}: ${item.details.graphics.data.graphics_model[1]}</p><p>${item.details.general_specs.data.core_count[0]}: ${item.details.general_specs.data.core_count[1]}</p>`;
+                } else if (isGraphicsCard(item)) {
+                  featuredInfo = `<p>${item.details.gpu.data.compute_units[0]}: ${item.details.gpu.data.compute_units[1]}</p><p>${item.details.gpu.data.ray_accelerators[0]}: ${item.details.gpu.data.ray_accelerators[1]}</p><p>${item.details.gpu.data.game_freq[0]}: ${item.details.gpu.data.game_freq[1]}</p>`;
+                }
+                return (
+                  <ProductCard
+                    name={item.name}
+                    imgUrl={Object.values(item.imgs)[0]}
+                    imgAlt={item.id}
+                    featuredInfo={featuredInfo}
+                    price={item.price}
+                    salePrice={item.salePrice}
+                    key={idx}
+                  />
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
     </main>
   );
 };

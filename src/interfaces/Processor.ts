@@ -65,4 +65,10 @@ interface Processor {
   };
 }
 
+function isProcessor(object: any): object is Processor {
+  return object.product_type === 'processor';
+}
+
 export default Processor;
+
+export { isProcessor };
