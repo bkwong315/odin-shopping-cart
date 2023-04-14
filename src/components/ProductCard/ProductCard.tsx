@@ -4,7 +4,7 @@ interface ProductCardProps {
   name: string;
   imgUrl: string;
   imgAlt: string;
-  featuredInfo: string;
+  featuredInfo: React.ReactNode;
   price: string;
   infoLinkUrl?: string;
   salePrice?: string;
@@ -25,14 +25,14 @@ const ProductCard = (props: ProductCardProps) => {
       <img src={imgUrl} alt={imgAlt} className='w-[60%]' />
       <div>
         <h5 className='font-bold text-black'>{name}</h5>
-        <p className='text-sm'>
+        <div className='text-sm'>
           {featuredInfo}{' '}
           {infoLinkUrl && (
             <a href={`https://${infoLinkUrl}`} className='underline'>
               {infoLinkUrl}.
             </a>
           )}
-        </p>
+        </div>
       </div>
       <div>
         <p className='text-[#525252]'>
