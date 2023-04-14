@@ -513,7 +513,7 @@ const ProductList: {
           'Max Boost Clock: Up to 5.6GHz',
           'Base Clock: 4.4GHz',
           'Default TDP / TDP: 120W',
-          'Graphics Model: AMD Radeon™ Graphics',
+          'Graphics Model: Integrated AMD Radeon™ Graphics',
         ],
         general_specs: {
           section_name: 'General Specifications',
@@ -587,7 +587,7 @@ const ProductList: {
           'Max Boost Clock: Up to 5.7GHz',
           'Base Clock: 4.2GHz',
           'Default TDP / TDP: 120W',
-          'Graphics Model: AMD Radeon™ Graphics',
+          'Graphics Model: Integrated AMD Radeon™ Graphics',
         ],
         general_specs: {
           section_name: 'General Specifications',
@@ -664,7 +664,7 @@ const ProductList: {
           'Base Clock: 4.5GHz',
           'Thermal Solution: Not Included',
           'Default TDP / TDP: 170W',
-          'Graphics Model: AMD Radeon™ Graphics',
+          'Graphics Model: Integrated AMD Radeon™ Graphics',
           `STAR WARS Jedi: Survivor™ game bundle with purchase.
     See full offer terms at www.amdrewards.com/terms.`,
         ],
@@ -743,7 +743,7 @@ const ProductList: {
           'Base Clock: 4.7GHz',
           'Thermal Solution: Not Included',
           'Default TDP / TDP: 105W',
-          'Graphics Model: AMD Radeon™ Graphics',
+          'Graphics Model: Integrated AMD Radeon™ Graphics',
           `STAR WARS Jedi: Survivor™ game bundle with purchase.
     See full offer terms at www.amdrewards.com/terms.`,
         ],
@@ -816,7 +816,7 @@ const ProductList: {
           'Base Clock: 4.5GHz',
           'Thermal Solution: Not Included',
           'Default TDP / TDP: 105W',
-          'Graphics Model: AMD Radeon™ Graphics',
+          'Graphics Model: Integrated AMD Radeon™ Graphics',
           `STAR WARS Jedi: Survivor™ game bundle with purchase.
     See full offer terms at www.amdrewards.com/terms.`,
           'Eligible for AMD Ryzen™ Processor and AMD Radeon™ Graphics Bundle Deals',
@@ -896,7 +896,7 @@ const ProductList: {
           'Base Clock: 4.7GHz',
           'Thermal Solution: Not Included',
           'Default TDP / TDP: 170W',
-          'Graphics Model: AMD Radeon™ Graphics',
+          'Graphics Model: Integrated AMD Radeon™ Graphics',
           `STAR WARS Jedi: Survivor™ game bundle with purchase.
     See full offer terms at www.amdrewards.com/terms.`,
           'Eligible for AMD Ryzen™ Processor and AMD Radeon™ Graphics Bundle Deals',
@@ -976,7 +976,7 @@ const ProductList: {
           'Base Clock: 3.9GHz',
           'Thermal Solution: Wraith Stealth',
           'Default TDP / TDP: 65W',
-          'Graphics Model: AMD Radeon™ Graphics',
+          'Graphics Model: Integrated AMD Radeon™ Graphics',
         ],
         general_specs: {
           section_name: 'General Specifications',
