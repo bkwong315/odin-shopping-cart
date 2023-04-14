@@ -82,11 +82,30 @@ const Shop = (props: ShopProps) => {
               key={`container-${containerIdx}`}>
               {displayedItems.map((item, idx) => {
                 if (idx < containerIdx || idx >= containerIdx + 3) return;
-                let featuredInfo = '';
+                let featuredInfo;
                 if (isProcessor(item)) {
-                  featuredInfo = `<p>${item.details.graphics.data.graphics_model[0]}: ${item.details.graphics.data.graphics_model[1]}</p><p>${item.details.general_specs.data.core_count[0]}: ${item.details.general_specs.data.core_count[1]}</p>`;
+                  featuredInfo = (
+                    <>
+                      <div>{`${item.details.key_points.filter((point) =>
+                        point.includes('Graphics Model')
+                      )}`}</div>
+                      <div>{`${item.details.general_specs.data.core_count[0]}: ${item.details.general_specs.data.core_count[1]}`}</div>
+                    </>
+                  );
                 } else if (isGraphicsCard(item)) {
-                  featuredInfo = `<p>${item.details.gpu.data.compute_units[0]}: ${item.details.gpu.data.compute_units[1]}</p><p>${item.details.gpu.data.ray_accelerators[0]}: ${item.details.gpu.data.ray_accelerators[1]}</p><p>${item.details.gpu.data.game_freq[0]}: ${item.details.gpu.data.game_freq[1]}</p>`;
+                  featuredInfo = (
+                    <>
+                      <div>
+                        {`${item.details.gpu.data.compute_units[0]}: ${item.details.gpu.data.compute_units[1]}`}
+                      </div>
+                      <div>
+                        {`${item.details.gpu.data.ray_accelerators[0]}: ${item.details.gpu.data.ray_accelerators[1]}`}
+                      </div>
+                      <div>
+                        {`${item.details.gpu.data.game_freq[0]}: ${item.details.gpu.data.game_freq[1]}`}
+                      </div>
+                    </>
+                  );
                 }
                 return (
                   <ProductCard
