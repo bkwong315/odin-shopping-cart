@@ -73,7 +73,7 @@ const Shop = (props: ShopProps) => {
           </div>
         </div>
       </header>
-      <div className='grid grid-rows-3 gap-10'>
+      <div className='grid grid-rows-3 gap-10 mt-6'>
         {displayedItems.map((_, containerIdx) => {
           if (containerIdx % 3 !== 0) return;
           return (
