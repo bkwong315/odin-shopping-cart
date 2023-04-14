@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import Product from '../interfaces/Product';
+import Processor from '../interfaces/Processor';
+import GraphicsCard from '../interfaces/GraphicsCard';
 
 interface ShopProps {
-  ProductList: { [productId: string]: Product };
+  productList:
+    | { [key: string]: Processor }
+    | { [key: string]: GraphicsCard }
+    | {
+        graphics_cards: { [key: string]: GraphicsCard };
+        processors: { [key: string]: Processor };
+      };
 }
 
 const Shop = (props: ShopProps) => {
   const location = useLocation();
 
-  const { ProductList } = props;
+  const { productList } = props;
   const [sortMethod, setSortMethod] = useState('featured');
 
   const selectOnChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -53,20 +60,6 @@ const Shop = (props: ShopProps) => {
           </div>
         </div>
       </header>
-      <div className='text-center'>
-        <h3>Shop</h3>{' '}
-        {Object.entries(ProductList).map((product, idx) => {
-          const { id, name, price } = product[1];
-
-          return (
-            <div key={idx}>
-              <Link to={`/shop/product/${id}`}>
-                {id} {name} {price}
-              </Link>
-            </div>
-          );
-        })}
-      </div>
     </main>
   );
 };
