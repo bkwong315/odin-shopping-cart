@@ -78,7 +78,7 @@ const Shop = (props: ShopProps) => {
           if (containerIdx % 3 !== 0) return;
           return (
             <div
-              className='grid grid-flow-col grid-cols-3 gap-8 overflow-x-visible overflow-y-clip'
+              className='flex justify-center gap-8 w-full overflow-x-visible overflow-y-clip'
               key={`container-${containerIdx}`}>
               {displayedItems.map((item, idx) => {
                 if (idx < containerIdx || idx >= containerIdx + 3) return;
@@ -115,6 +115,7 @@ const Shop = (props: ShopProps) => {
                     featuredInfo={featuredInfo}
                     price={item.price}
                     salePrice={item.salePrice}
+                    inStock={parseInt(item.stock) > 0}
                     key={idx}
                   />
                 );
