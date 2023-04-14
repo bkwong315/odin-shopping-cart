@@ -48,7 +48,7 @@ const Shop = (props: ShopProps) => {
             {location.pathname.replace('/', '').replace('-', ' ')}
           </h3>
         </div>
-        <div className='flex justify-between w-full mt-12'>
+        <div className='flex justify-between items-center w-full mt-12'>
           <div>
             Displaying 1 - {Object.entries(productList).length} of{' '}
             {Object.entries(productList).length}
