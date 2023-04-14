@@ -14,6 +14,7 @@ const ProductList: {
       stock: '0',
       price: '999.00',
       imgs: {
+        card: './assets/imgs/products/rx-7900xtx-card.webp',
         img_1: './assets/imgs/products/rx-7900xtx-1.webp',
         img_2: './assets/imgs/products/rx-7900xtx-2.webp',
       },
@@ -118,6 +119,7 @@ const ProductList: {
       price: '899.00',
       salePrice: '849.00',
       imgs: {
+        card: './assets/imgs/products/rx-7900xt-card.webp',
         img_1: './assets/imgs/products/rx-7900xt-1.webp',
         img_2: './assets/imgs/products/rx-7900xt-2.webp',
       },
@@ -221,6 +223,7 @@ const ProductList: {
       price: '1099.00',
       salePrice: '699.00',
       imgs: {
+        card: './assets/imgs/products/rx-6950xt-card.webp',
         default: './assets/imgs/products/rx-6950xt-default.webp',
         back: './assets/imgs/products/rx-6950xt-back.webp',
         zoom_out: './assets/imgs/products/rx-6950xt-zoom-out.webp',
@@ -326,6 +329,7 @@ const ProductList: {
       price: '549.00',
       salePrice: '419.00',
       imgs: {
+        card: './assets/imgs/products/rx-6750xt-card.webp',
         default: './assets/imgs/products/rx-6750xt-default.webp',
         back: './assets/imgs/products/rx-6750xt-back.webp',
         zoom_out: './assets/imgs/products/rx-6750xt-zoom-out.webp',
@@ -429,6 +433,7 @@ const ProductList: {
       stock: '0',
       price: '449.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-7-7800x3d-card.webp',
         default: './assets/imgs/products/ryzen-7-7800x3d-default.webp',
         zoom_out: './assets/imgs/products/ryzen-7-7800x3d-zoom-out.webp',
       },
@@ -503,6 +508,7 @@ const ProductList: {
       stock: '0',
       price: '599.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-9-7900x3d-card.webp',
         default: './assets/imgs/products/ryzen-9-7900x3d-default.webp',
         zoom_out: './assets/imgs/products/ryzen-9-7900x3d-zoom-out.webp',
       },
@@ -577,6 +583,7 @@ const ProductList: {
       price: '699.00',
       stock: '12',
       imgs: {
+        card: './assets/imgs/products/ryzen-9-7950x3d-card.webp',
         default: './assets/imgs/products/ryzen-9-7950x3d-default.webp',
         zoom_out: './assets/imgs/products/ryzen-9-7950x3d-zoom-out.webp',
       },
@@ -653,6 +660,7 @@ const ProductList: {
       price: '699.00',
       salePrice: '599.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-9-7950x-card.webp',
         default: './assets/imgs/products/ryzen-9-7950x-default.webp',
         zoom_out: './assets/imgs/products/ryzen-9-7950x-zoom-out.webp',
       },
@@ -732,6 +740,7 @@ const ProductList: {
       price: '299.00',
       salePrice: '249.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-5-7600x-card.webp',
         default: './assets/imgs/products/ryzen-5-7600x-default.webp',
         zoom_out: './assets/imgs/products/ryzen-5-7600x-zoom-out.webp',
       },
@@ -805,6 +814,7 @@ const ProductList: {
       price: '399.00',
       salePrice: '349.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-7-7700x-card.webp',
         default: './assets/imgs/products/ryzen-7-7700x-default.webp',
         zoom_out: './assets/imgs/products/ryzen-7-7700x-zoom-out.webp',
       },
@@ -885,6 +895,7 @@ const ProductList: {
       price: '549.00',
       salePrice: '449.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-9-7900x-card.webp',
         default: './assets/imgs/products/ryzen-9-7900x-default.webp',
         zoom_out: './assets/imgs/products/ryzen-9-7900x-zoom-out.webp',
       },
@@ -965,6 +976,7 @@ const ProductList: {
       price: '259.00',
       salePrice: '139.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-5-5600g-card.webp',
         default: './assets/imgs/products/ryzen-5-5600g-default.webp',
         zoom_out: './assets/imgs/products/ryzen-5-5600g-zoom-out.webp',
       },
@@ -1052,6 +1064,7 @@ const ProductList: {
       price: '299.00',
       salePrice: '169.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-5-5600x-card.webp',
         default: './assets/imgs/products/ryzen-5-5600x-default.webp',
         zoom_out: './assets/imgs/products/ryzen-5-5600x-zoom-out.webp',
       },
@@ -1135,6 +1148,7 @@ const ProductList: {
       price: '359.00',
       salePrice: '199.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-7-5700g-card.webp',
         default: './assets/imgs/products/ryzen-7-5700g-default.webp',
         zoom_out: './assets/imgs/products/ryzen-7-5700g-zoom-out.webp',
       },
@@ -1222,6 +1236,7 @@ const ProductList: {
       price: '449.00',
       salePrice: '249.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-7-5800x-card.webp',
         default: './assets/imgs/products/ryzen-7-5800x-default.webp',
         zoom_out: './assets/imgs/products/ryzen-7-5800x-zoom-out.webp',
       },
@@ -1303,6 +1318,7 @@ const ProductList: {
       price: '449.00',
       salePrice: '349.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-7-5800x3d-card.webp',
         default: './assets/imgs/products/ryzen-7-5800x3d-default.webp',
         zoom_out: './assets/imgs/products/ryzen-7-5800x3d-zoom-out.webp',
       },
@@ -1384,6 +1400,7 @@ const ProductList: {
       price: '549.00',
       salePrice: '349.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-9-5900x-card.webp',
         default: './assets/imgs/products/ryzen-9-5900x-default.webp',
         zoom_out: './assets/imgs/products/ryzen-9-5900x-zoom-out.webp',
       },
@@ -1465,6 +1482,7 @@ const ProductList: {
       price: '799.00',
       salePrice: '499.00',
       imgs: {
+        card: './assets/imgs/products/ryzen-9-5950x-card.webp',
         default: './assets/imgs/products/ryzen-9-5950x-default.webp',
         zoom_out: './assets/imgs/products/ryzen-9-5950x-zoom-out.webp',
       },
