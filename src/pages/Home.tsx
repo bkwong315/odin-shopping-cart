@@ -3,6 +3,7 @@ import React from 'react';
 import Carousel from '../components/Carousel/Carousel';
 import ShopDisplayLink from '../components/ShopDisplayLink/ShopDisplayLink';
 import FeaturedProducts from '../components/FeaturedProducts/FeaturedProducts';
+import ProductList from '../ProductList';
 
 const Home = () => {
   const featuredProducts = [
@@ -53,7 +54,13 @@ const Home = () => {
           rotationDir='clockwise'
         />
       </div>
-      <FeaturedProducts data={featuredProducts} />
+      <FeaturedProducts
+        data={{
+          radeon_rx_7900xt: ProductList.graphics_cards.radeon_rx_7900xt,
+          ryzen_9_7950x3d: ProductList.processors.ryzen_9_7950x3d,
+          ryzen_9_7900x: ProductList.processors.ryzen_9_7900x,
+        }}
+      />
     </div>
   );
 };
