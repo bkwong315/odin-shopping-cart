@@ -21,14 +21,141 @@ const Shop = (props: ShopProps) => {
   const [sortMethod, setSortMethod] = useState('featured');
   const startIdx = 0;
 
+  const sortByFeatured = (
+    prod1: Processor | GraphicsCard,
+    prod2: Processor | GraphicsCard
+  ) => {
+    const prod1_price = parseInt(prod1.price);
+    const prod2_price = parseInt(prod2.price);
+
+    if (prod1.salePrice && prod2.salePrice) {
+      return prod1_price - parseInt(prod1.salePrice) ===
+        prod2_price - parseInt(prod2.salePrice)
+        ? 0
+        : prod1_price - parseInt(prod1.salePrice) <
+          prod2_price - parseInt(prod2.salePrice)
+        ? 1
+        : -1;
+    } else if (prod1.salePrice && !prod2.salePrice) {
+      return -1;
+    } else if (!prod1.salePrice && prod2.salePrice) {
+      return 1;
+    }
+    return prod1_price === prod2_price ? 0 : prod1_price < prod2_price ? 1 : -1;
+  };
+
+  const sortByAlphabet = (
+    prod1: Processor | GraphicsCard,
+    prod2: Processor | GraphicsCard
+  ) => prod1.name.localeCompare(prod2.name);
+
+  const sortByDate = (
+    prod1: Processor | GraphicsCard,
+    prod2: Processor | GraphicsCard
+  ) => {
+    const dateObjProd1 = parseDateFormat(
+      prod1.details.general_specs.data.launch_date[1]
+    );
+    const dateObjProd2 = parseDateFormat(
+      prod2.details.general_specs.data.launch_date[1]
+    );
+
+    return dateObjProd1 === dateObjProd2
+      ? sortByAlphabet(prod1, prod2) * -1
+      : dateObjProd1 < dateObjProd2
+      ? 1
+      : -1;
+  };
+
+  const parseDateFormat = (date: string) => {
+    const monthMap: { [key: string]: string } = {
+      january: '01',
+      feburary: '02',
+      march: '03',
+      april: '04',
+      may: '05',
+      june: '06',
+      july: '07',
+      august: '08',
+      september: '09',
+      october: '10',
+      november: '11',
+      december: '12',
+    };
+    let splitDate;
+
+    if (date.split('/').length > 1) {
+      splitDate = date.split('/');
+      return new Date(`${splitDate[2]}-${splitDate[0]}-${splitDate[1]}`);
+    } else if (date.split(' ').length > 1) {
+      splitDate = date.split(' ');
+      return new Date(
+        `${splitDate[1]}-${monthMap[splitDate[0].toLowerCase()]}-${'01'}`
+      );
+    }
+
+    return new Date();
+  };
+
+  const sortByPrice = (
+    prod1: Processor | GraphicsCard,
+    prod2: Processor | GraphicsCard
+  ) => {
+    const prod1_price = parseInt(prod1.price);
+    const prod2_price = parseInt(prod2.price);
+
+    if (prod1.salePrice && prod2.salePrice) {
+      return parseInt(prod1.salePrice) === parseInt(prod2.salePrice)
+        ? 0
+        : parseInt(prod1.salePrice) > parseInt(prod2.salePrice)
+        ? 1
+        : -1;
+    } else if (prod1.salePrice && !prod2.salePrice) {
+      return parseInt(prod1.salePrice) === prod2_price
+        ? 0
+        : parseInt(prod1.salePrice) > prod2_price
+        ? 1
+        : -1;
+    } else if (!prod1.salePrice && prod2.salePrice) {
+      return prod1_price === parseInt(prod2.salePrice)
+        ? 0
+        : prod1_price > parseInt(prod2.salePrice)
+        ? 1
+        : -1;
+    }
+
+    return prod1_price === prod2_price ? 0 : prod1_price > prod2_price ? 1 : -1;
+  };
+
+  const sortMap: {
+    [key: string]: (
+      prod1: Processor | GraphicsCard,
+      prod2: Processor | GraphicsCard
+    ) => number;
+  } = {
+    featured: sortByFeatured,
+    newest: sortByDate,
+    alphabet_forward: sortByAlphabet,
+    alphabet_backward: (
+      prod1: Processor | GraphicsCard,
+      prod2: Processor | GraphicsCard
+    ) => sortByAlphabet(prod1, prod2) * -1,
+    price_ascending: sortByPrice,
+    price_descending: (
+      prod1: Processor | GraphicsCard,
+      prod2: Processor | GraphicsCard
+    ) => sortByPrice(prod1, prod2) * -1,
+  };
+
   const displayedItems: Array<Processor | GraphicsCard> = Object.entries(
     productList
   )
-    .slice(startIdx, startIdx + 9)
     .reduce((reducer, item) => {
       reducer.push(item[1]);
       return reducer;
-    }, []);
+    }, [])
+    .sort(sortMap[sortMethod])
+    .slice(startIdx, startIdx + 9);
 
   const selectOnChangeHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortMethod(e.target.value);
@@ -64,10 +191,10 @@ const Shop = (props: ShopProps) => {
                 className='appearance-none pl-2 pr-24 py-2 bg-transparent border border-neutral-300 focus-visible:outline-none'>
                 <option value='featured'>Featured Items</option>
                 <option value='newest'>Newest Items</option>
-                <option value='alphabetical'>A to Z</option>
-                <option value='reverseAlphabetical'>Z to A</option>
-                <option value='priceAscending'>Price: Ascending</option>
-                <option value='priceDescending'>Price: Descending</option>
+                <option value='alphabet_forward'>A to Z</option>
+                <option value='alphabet_backward'>Z to A</option>
+                <option value='price_ascending'>Price: Ascending</option>
+                <option value='price_descending'>Price: Descending</option>
               </select>
             </span>
           </div>
