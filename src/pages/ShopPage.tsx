@@ -203,8 +203,11 @@ const Shop = (props: ShopProps) => {
         </div>
         <div className='flex justify-between items-center w-full mt-12'>
           <div>
-            Displaying {startIdx + 1} - {Object.entries(productList).length} of{' '}
-            {Object.entries(productList).length}
+            Displaying {startIdx + 1} -{' '}
+            {startIdx + 9 < Object.entries(productList).length
+              ? startIdx + 9
+              : Object.entries(productList).length}{' '}
+            of {Object.entries(productList).length}
           </div>
           <div className='flex items-center gap-2'>
             <span className='font-noto-sans-medium font-medium'>Sort by:</span>
