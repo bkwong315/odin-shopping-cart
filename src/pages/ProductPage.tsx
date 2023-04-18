@@ -1,8 +1,9 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 
 import Processor from '../interfaces/Processor';
 import GraphicsCard from '../interfaces/GraphicsCard';
+import NavDisplay from '../components/NavDisplay/NavDisplay';
 
 interface ProductPageProps {
   addToCart: (product: Processor | GraphicsCard) => void;
@@ -13,10 +14,13 @@ interface ProductPageProps {
 
 const ProductPage = (props: ProductPageProps) => {
   const params = useParams();
+  const location = useLocation();
+
   const { addToCart, productList } = props;
 
   return (
     <div className='text-center'>
+      <NavDisplay location={location} />
       <h3>{params.productId} Page</h3>
       <button
         onClick={addToCart.bind(null, productList[params.productId])}
