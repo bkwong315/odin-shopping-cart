@@ -152,12 +152,10 @@ const Shop = (props: ShopProps) => {
   };
 
   const pageBtns = useMemo(() => {
-    console.log(startIdx);
     return Object.values(productList).reduce((reducer, _, idx) => {
       if (idx % 9 === 0) {
-        console.log(idx);
         reducer.push(
-          <a href='#main' className='group'>
+          <a href='#main' className='group' key={idx}>
             <button
               className={`flex justify-center items-center p-2 w-8 h-8 rounded text-sm transform-[background-color, color] duration-300 ${
                 startIdx === idx
@@ -165,8 +163,7 @@ const Shop = (props: ShopProps) => {
                   : 'text-neutral-600 group-hover:bg-neutral-400 group-hover:text-white'
               }`}
               onClick={handleSelectPage.bind(undefined, reducer.length + 1)}
-              disabled={startIdx === idx}
-              key={idx}>
+              disabled={startIdx === idx}>
               {reducer.length + 1}
             </button>
           </a>
