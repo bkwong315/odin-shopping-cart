@@ -31,7 +31,7 @@ const NavDisplay = (props: NavDisplayProps) => {
         {location.state
           ? location.state.prevPath === '/'
             ? `${product.product_type.replace('-', ' ')}s`
-            : location.state.prevPath.replace('/', ' ')
+            : location.state.prevPath.replace('/', '').replace('-', ' ')
           : `${product.product_type.replace('-', ' ')}s`}
       </Link>{' '}
       &gt;{' '}
