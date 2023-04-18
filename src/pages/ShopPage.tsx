@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import Processor, { isProcessor } from '../interfaces/Processor';
@@ -20,6 +20,10 @@ const Shop = (props: ShopProps) => {
   const { productList } = props;
   const [sortMethod, setSortMethod] = useState('featured');
   const [startIdx, setStartIdx] = useState(0);
+
+  useEffect(() => {
+    setStartIdx(0);
+  }, [props]);
 
   const sortByFeatured = (
     prod1: Processor | GraphicsCard,
@@ -171,7 +175,7 @@ const Shop = (props: ShopProps) => {
       }
       return reducer;
     }, []);
-  }, [startIdx]);
+  }, [startIdx, props]);
 
   const displayedItems: Array<Processor | GraphicsCard> = Object.entries(
     productList
