@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 interface ProductCardProps {
   name: string;
@@ -25,6 +25,8 @@ const ProductCard = (props: ProductCardProps) => {
     salePrice,
     inStock,
   } = props;
+  const location = useLocation();
+
   return (
     <div
       className={`relative flex flex-col w-[33%] h-full items-center gap-4 border text-center
@@ -34,7 +36,10 @@ const ProductCard = (props: ProductCardProps) => {
           `after:content-["Sale!"] after:absolute after:top-0 after:left-0 after:px-2 
       after:bg-red-500 after:text-white after:font-bold after:text-sm after:rounded-r-sm hover:after:bg-black after:transition-all after:duration-700`
         }`}>
-      <Link to={pageLink} className='w-[70%]'>
+      <Link
+        to={pageLink}
+        state={{ prevPath: location.pathname }}
+        className='w-[70%]'>
         <img src={imgUrl} alt={imgAlt} />
       </Link>
       <div className='grow'>
