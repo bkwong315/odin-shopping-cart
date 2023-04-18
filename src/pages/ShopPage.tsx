@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import Processor, { isProcessor } from '../interfaces/Processor';
@@ -19,7 +19,7 @@ const Shop = (props: ShopProps) => {
 
   const { productList } = props;
   const [sortMethod, setSortMethod] = useState('featured');
-  const startIdx = 0;
+  const [startIdx, setStartIdx] = useState(0);
 
   const sortByFeatured = (
     prod1: Processor | GraphicsCard,
@@ -147,6 +147,35 @@ const Shop = (props: ShopProps) => {
     ) => sortByPrice(prod1, prod2) * -1,
   };
 
+  const handleSelectPage = (idx: number) => {
+    setStartIdx((idx - 1) * 9);
+  };
+
+  const pageBtns = useMemo(() => {
+    console.log(startIdx);
+    return Object.values(productList).reduce((reducer, _, idx) => {
+      if (idx % 9 === 0) {
+        console.log(idx);
+        reducer.push(
+          <a href='#main' className='group'>
+            <button
+              className={`flex justify-center items-center p-2 w-8 h-8 rounded text-sm transform-[background-color, color] duration-300 ${
+                startIdx === idx
+                  ? 'bg-neutral-600 text-white'
+                  : 'text-neutral-600 group-hover:bg-neutral-400 group-hover:text-white'
+              }`}
+              onClick={handleSelectPage.bind(undefined, reducer.length + 1)}
+              disabled={startIdx === idx}
+              key={idx}>
+              {reducer.length + 1}
+            </button>
+          </a>
+        );
+      }
+      return reducer;
+    }, []);
+  }, [startIdx]);
+
   const displayedItems: Array<Processor | GraphicsCard> = Object.entries(
     productList
   )
@@ -162,7 +191,7 @@ const Shop = (props: ShopProps) => {
   };
 
   return (
-    <main className='max-w-[1440px] m-auto p-4'>
+    <main id='main' className='max-w-[1440px] m-auto p-4'>
       <header className='text-sm'>
         <div className='grid gap-3'>
           <div className=''>
@@ -177,7 +206,7 @@ const Shop = (props: ShopProps) => {
         </div>
         <div className='flex justify-between items-center w-full mt-12'>
           <div>
-            Displaying 1 - {Object.entries(productList).length} of{' '}
+            Displaying {startIdx + 1} - {Object.entries(productList).length} of{' '}
             {Object.entries(productList).length}
           </div>
           <div className='flex items-center gap-2'>
@@ -250,6 +279,25 @@ const Shop = (props: ShopProps) => {
             </div>
           );
         })}
+      </div>
+      <div className='flex justify-center items-center gap-2 mt-8'>
+        {Math.floor(startIdx / 9) !== 0 && (
+          <a href='#main'>
+            <button
+              onClick={() => setStartIdx((prevStartIdx) => prevStartIdx - 9)}>
+              &lt; Prev
+            </button>
+          </a>
+        )}
+        {pageBtns}
+        {Math.floor(startIdx / 9) < pageBtns.length - 1 && (
+          <a href='#main'>
+            <button
+              onClick={() => setStartIdx((prevStartIdx) => prevStartIdx + 9)}>
+              Next &gt;
+            </button>
+          </a>
+        )}
       </div>
     </main>
   );
