@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import Processor, { isProcessor } from '../interfaces/Processor';
 import GraphicsCard, { isGraphicsCard } from '../interfaces/GraphicsCard';
