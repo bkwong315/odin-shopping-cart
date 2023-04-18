@@ -294,7 +294,8 @@ const Shop = (props: ShopProps) => {
         {Math.floor(startIdx / 9) !== 0 && (
           <a href='#main'>
             <button
-              onClick={() => setStartIdx((prevStartIdx) => prevStartIdx - 9)}>
+              onClick={() => setStartIdx((prevStartIdx) => prevStartIdx - 9)}
+              className='uppercase text-[.9rem] text-neutral-600 hover:text-neutral-400 font-medium transform-[color] duration-300'>
               &lt; Prev
             </button>
           </a>
@@ -303,7 +304,8 @@ const Shop = (props: ShopProps) => {
         {Math.floor(startIdx / 9) < pageBtns.length - 1 && (
           <a href='#main'>
             <button
-              onClick={() => setStartIdx((prevStartIdx) => prevStartIdx + 9)}>
+              onClick={() => setStartIdx((prevStartIdx) => prevStartIdx + 9)}
+              className='uppercase text-[.9rem] text-neutral-600 hover:text-neutral-400 font-medium transform-[color] duration-300'>
               Next &gt;
             </button>
           </a>
