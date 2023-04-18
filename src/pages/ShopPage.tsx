@@ -229,9 +229,14 @@ const Shop = (props: ShopProps) => {
           </div>
         </div>
       </header>
-      <div className='grid grid-rows-3 gap-10 mt-6'>
+      <div className='grid gap-10 mt-6'>
         {displayedItems.map((_, containerIdx) => {
-          if (containerIdx % 3 !== 0) return;
+          const max_rows = Math.ceil(displayedItems.length / 3);
+          if (
+            containerIdx % 3 !== 0 ||
+            Math.ceil((containerIdx + 1) / 3) > max_rows
+          )
+            return;
           return (
             <div
               className='flex justify-center gap-8 w-full overflow-x-visible overflow-y-clip'
