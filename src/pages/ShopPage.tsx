@@ -20,6 +20,7 @@ const Shop = (props: ShopProps) => {
   const { productList } = props;
   const [sortMethod, setSortMethod] = useState('featured');
   const [startIdx, setStartIdx] = useState(0);
+  const productListLength = Object.entries(productList).length;
 
   useEffect(() => {
     setStartIdx(0);
@@ -207,11 +208,15 @@ const Shop = (props: ShopProps) => {
         </div>
         <div className='flex justify-between items-center w-full mt-12'>
           <div>
-            Displaying {startIdx + 1} -{' '}
-            {startIdx + 9 < Object.entries(productList).length
-              ? startIdx + 9
-              : Object.entries(productList).length}{' '}
-            of {Object.entries(productList).length}
+            {productListLength > 9
+              ? `Displaying ${startIdx + 1} -
+            ${
+              startIdx + 9 < productListLength
+                ? startIdx + 9
+                : productListLength
+            }
+            of ${productListLength}`
+              : `Displaying ${productListLength} of ${productListLength}`}
           </div>
           <div className='flex items-center gap-2'>
             <span className='font-noto-sans-medium font-medium'>Sort by:</span>
