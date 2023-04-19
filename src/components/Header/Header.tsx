@@ -9,7 +9,7 @@ const Header = () => {
       <div className='w-full bg-black'>
         <div className='flex justify-between max-w-[1440px] m-auto px-4 py-7'>
           <div className='flex items-center gap-4'>
-            <Link to='/'>
+            <Link to='https://www.amd.com/en.html'>
               <img
                 src='./assets/imgs/amd-header-logo.svg'
                 className={`h-6`}
@@ -17,7 +17,7 @@ const Header = () => {
               />
             </Link>
             <Link
-              to='/shop'
+              to='/'
               className='font-bold text-lg pl-4 transition-[color] hover:text-neutral-400 border-solid border-l-[1px] border-[rgba(255,255,255,.4)]'>
               Store
             </Link>
