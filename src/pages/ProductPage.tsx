@@ -48,9 +48,9 @@ const ProductPage = (props: ProductPageProps) => {
               <span className='font-bold'>${product.salePrice}</span>
             </div>
           )}
-          <ul className='list-inside'>
+          <ul>
             {product.details.key_points.map((point, idx) => (
-              <li className='list-disc' key={idx}>
+              <li className='list-disc ml-5' key={idx}>
                 {point}
               </li>
             ))}
