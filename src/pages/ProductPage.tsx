@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import Processor from '../interfaces/Processor';
 import GraphicsCard from '../interfaces/GraphicsCard';
@@ -13,21 +13,14 @@ interface ProductPageProps {
 }
 
 const ProductPage = (props: ProductPageProps) => {
-  const params = useParams();
   const location = useLocation();
 
   const { addToCart, productList } = props;
 
   return (
-    <div className='text-center'>
+    <main className='flex max-w-[1440px] m-auto px-4 py-7'>
       <NavDisplay location={location} />
-      <h3>{params.productId} Page</h3>
-      <button
-        onClick={addToCart.bind(null, productList[params.productId])}
-        className='bg-purple-800 rounded px-4 py-1 text-white font-bold hover:scale-105 transition-all'>
-        Add to Cart
-      </button>
-    </div>
+    </main>
   );
 };
 
