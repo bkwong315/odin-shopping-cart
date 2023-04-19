@@ -98,7 +98,7 @@ const ProductPage = (props: ProductPageProps) => {
           </div>
         </div>
       </div>
-      <DetailsDisplay />
+      <DetailsDisplay details={product.details} />
     </main>
   );
 };
