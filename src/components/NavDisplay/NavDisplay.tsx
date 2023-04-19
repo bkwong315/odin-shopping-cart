@@ -17,7 +17,7 @@ const NavDisplay = (props: NavDisplayProps) => {
     product = ProductList.graphics_cards[location.pathname.replace('/', '')];
   }
   return (
-    <div className=''>
+    <div className='text-sm'>
       <Link to='/'>Home</Link> &gt;{' '}
       <Link
         to={
