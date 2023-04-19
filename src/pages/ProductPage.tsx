@@ -32,6 +32,39 @@ const ProductPage = (props: ProductPageProps) => {
           <h2 className='text-4xl font-klavika-medium tracking-wide'>
             {product.name}
           </h2>
+          <div>SKU: {product.sku}</div>
+          <div className='text-[#525252]'>
+            {product.salePrice && <span className='text-sm'>Was: </span>}
+            <span
+              className={
+                product.salePrice ? 'line-through font-bold' : 'font-bold'
+              }>
+              ${product.price}
+            </span>
+          </div>
+          {product.salePrice && (
+            <div>
+              <span className='text-sm'>Now:</span>{' '}
+              <span className='font-bold'>${product.salePrice}</span>
+            </div>
+          )}
+          <ul className='list-inside'>
+            {product.details.key_points.map((point, idx) => (
+              <li className='list-disc' key={idx}>
+                {point}
+              </li>
+            ))}
+          </ul>
+          <div>Maximum Purchase: 1 unit</div>
+          <div>
+            <p>Quantity:</p>
+            <div>
+              <button>-</button>
+              <input type='number' />
+              <button>+</button>
+            </div>
+            <button>Add to Cart</button>
+          </div>
         </div>
       </div>
     </main>
