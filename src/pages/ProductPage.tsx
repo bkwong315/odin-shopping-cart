@@ -58,12 +58,20 @@ const ProductPage = (props: ProductPageProps) => {
           <div>Maximum Purchase: 1 unit</div>
           <div>
             <p>Quantity:</p>
-            <div>
-              <button>-</button>
-              <input type='number' />
-              <button>+</button>
+            <div className='flex'>
+              <button className='text-center p-2 border'>-</button>
+              <input
+                type='number'
+                min={1}
+                max={1}
+                defaultValue={1}
+                className='p-2 text-center border border-x-0 appearance-none'
+              />
+              <button className='text-center p-2 border'>+</button>
             </div>
-            <button>Add to Cart</button>
+            <button className='uppercase px-8 py-3 bg-black text-white font-bold'>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
