@@ -54,9 +54,9 @@ const DetailsDisplay = (props: DetailsDisplayProps) => {
       <div className='grid grid-cols-3 gap-4 border text-sm p-8'>
         {Object.values(categories[selectedCategory].data).map((detail, idx) => {
           return (
-            <div key={idx} className='flex gap-2'>
-              <span className='inline font-bold'>{detail[0]}:</span>
-              <span>{detail[1]}</span>
+            <div key={idx}>
+              <span className='font-bold'>{detail[0]}: </span>
+              <span className='whitespace-pre-wrap'>{detail[1]}</span>
             </div>
           );
         })}

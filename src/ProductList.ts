@@ -40,9 +40,9 @@ const ProductList: {
             os_support: [
               'OS Support',
               `Windows 11 - 64-Bit Edition
-            Windows 10 - 64-Bit Edition
-            Ubuntu x86 64-Bit
-            Linux x86_64`,
+Windows 10 - 64-Bit Edition
+Ubuntu x86 64-Bit
+Linux x86_64`,
             ],
           },
         },
@@ -145,9 +145,9 @@ const ProductList: {
             os_support: [
               'OS Support',
               `Windows 11 - 64-Bit Edition
-            Windows 10 - 64-Bit Edition
-            Ubuntu x86 64-Bit
-            Linux x86_64`,
+Windows 10 - 64-Bit Edition
+Ubuntu x86 64-Bit
+Linux x86_64`,
             ],
           },
         },
@@ -250,8 +250,8 @@ const ProductList: {
             os_support: [
               'OS Support',
               `Windows 11 - 64-Bit Edition
-              Windows 10 - 64-Bit Edition
-              Linux x86_64`,
+Windows 10 - 64-Bit Edition
+Linux x86_64`,
             ],
           },
         },
@@ -355,9 +355,9 @@ const ProductList: {
             size: ['Slot Size', '2 slots'],
             os_support: [
               'OS Support',
-              `Windows 11 - 64-Bit Edition
-              Windows 10 - 64-Bit Edition
-              Linux x86_64`,
+              `Windows 11 - 64-Bit Edition 
+Windows 10 - 64-Bit Edition 
+Linux x86_64`,
             ],
           },
         },
@@ -470,10 +470,10 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 11 - 64-Bit Edition
-          Windows 10 - 64-Bit Edition
-          RHEL x86 64-Bit
-          Ubuntu x86 64-Bit
-          *Operating System (OS) support will vary by manufacturer.`,
+Windows 10 - 64-Bit Edition
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -545,10 +545,10 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 11 - 64-Bit Edition
-          Windows 10 - 64-Bit Edition
-          RHEL x86 64-Bit
-          Ubuntu x86 64-Bit
-          *Operating System (OS) support will vary by manufacturer.`,
+Windows 10 - 64-Bit Edition
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -621,10 +621,10 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 11 - 64-Bit Edition
-          Windows 10 - 64-Bit Edition
-          RHEL x86 64-Bit
-          Ubuntu x86 64-Bit
-          *Operating System (OS) support will vary by manufacturer.`,
+Windows 10 - 64-Bit Edition
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -701,10 +701,10 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 11 - 64-Bit Edition
-          Windows 10 - 64-Bit Edition
-          RHEL x86 64-Bit
-          Ubuntu x86 64-Bit
-          *Operating System (OS) support will vary by manufacturer.`,
+Windows 10 - 64-Bit Edition
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -781,10 +781,10 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 11 - 64-Bit Edition
-          Windows 10 - 64-Bit Edition
-          RHEL x86 64-Bit
-          Ubuntu x86 64-Bit
-          *Operating System (OS) support will vary by manufacturer.`,
+Windows 10 - 64-Bit Edition
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -856,10 +856,10 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 11 - 64-Bit Edition
-          Windows 10 - 64-Bit Edition
-          RHEL x86 64-Bit
-          Ubuntu x86 64-Bit
-          *Operating System (OS) support will vary by manufacturer.`,
+Windows 10 - 64-Bit Edition
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -937,10 +937,10 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 11 - 64-Bit Edition
-          Windows 10 - 64-Bit Edition
-          RHEL x86 64-Bit
-          Ubuntu x86 64-Bit
-          *Operating System (OS) support will vary by manufacturer.`,
+Windows 10 - 64-Bit Edition
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -1020,10 +1020,10 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 11 - 64-Bit Edition
-          Windows 10 - 64-Bit Edition
-          RHEL x86 64-Bit
-          Ubuntu x86 64-Bit
-          *Operating System (OS) support will vary by manufacturer.`,
+Windows 10 - 64-Bit Edition
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -1104,10 +1104,10 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 11 - 64-Bit Edition
-          Windows 10 - 64-Bit Edition
-          RHEL x86 64-Bit
-          Ubuntu x86 64-Bit
-          *Operating System (OS) support will vary by manufacturer.`,
+Windows 10 - 64-Bit Edition
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -1192,10 +1192,10 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 11 - 64-Bit Edition
-          Windows 10 - 64-Bit Edition
-          RHEL x86 64-Bit
-          Ubuntu x86 64-Bit
-          *Operating System (OS) support will vary by manufacturer.`,
+Windows 10 - 64-Bit Edition
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -1276,9 +1276,9 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 10 - 64-Bit Edition
-        RHEL x86 64-Bit
-        Ubuntu x86 64-Bit
-        *Operating System (OS) support will vary by manufacturer.`,
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -1358,9 +1358,9 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 10 - 64-Bit Edition
-        RHEL x86 64-Bit
-        Ubuntu x86 64-Bit
-        *Operating System (OS) support will vary by manufacturer.`,
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -1440,9 +1440,9 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 10 - 64-Bit Edition
-        RHEL x86 64-Bit
-        Ubuntu x86 64-Bit
-        *Operating System (OS) support will vary by manufacturer.`,
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
@@ -1522,9 +1522,9 @@ const ProductList: {
             os_support: [
               '*OS Support',
               `Windows 10 - 64-Bit Edition
-        RHEL x86 64-Bit
-        Ubuntu x86 64-Bit
-        *Operating System (OS) support will vary by manufacturer.`,
+RHEL x86 64-Bit
+Ubuntu x86 64-Bit
+*Operating System (OS) support will vary by manufacturer.`,
             ],
           },
         },
