@@ -6,6 +6,7 @@ import GraphicsCard from '../interfaces/GraphicsCard';
 import NavDisplay from '../components/NavDisplay/NavDisplay';
 import DetailsDisplay from '../components/DetailsDisplay/DetailsDisplay';
 import ProductList from '../ProductList';
+import RelatedItems from '../components/RelatedItems/RelatedItems';
 
 interface ProductPageProps {
   addToCart: (product: Processor | GraphicsCard) => void;
@@ -107,6 +108,7 @@ const ProductPage = (props: ProductPageProps) => {
         </div>
       </div>
       <DetailsDisplay details={product.details} />
+      <RelatedItems />
     </main>
   );
 };
