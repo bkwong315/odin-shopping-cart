@@ -27,7 +27,29 @@ const ProductPage = (props: ProductPageProps) => {
     <main className='flex flex-col max-w-[1440px] m-auto px-4 py-7'>
       <NavDisplay location={location} />
       <div className='grid grid-cols-2'>
-        <div>Gallery</div>
+        <div className='grid grid-cols-[max-content_1fr] place-items-center '>
+          <div className='grid gap-[.25rem]'>
+            {Object.entries(product.imgs).map((keyValPair, idx) => {
+              const [key, img] = [...keyValPair];
+              if (key === 'card') return;
+
+              return (
+                <div
+                  className='grid place-items-center w-24 h-24 p-2 border'
+                  key={idx}>
+                  <img src={img} alt={img} className='w-8/12' />
+                </div>
+              );
+            })}
+          </div>
+          <div>
+            <img
+              src={Object.values(product.imgs)[1]}
+              alt={Object.values(product.imgs)[1]}
+              className=''
+            />
+          </div>
+        </div>
         <div>
           <h2 className='text-4xl font-klavika-medium tracking-wide'>
             {product.name}
