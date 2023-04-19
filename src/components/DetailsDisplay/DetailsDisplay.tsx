@@ -20,7 +20,16 @@ const DetailsDisplay = (props: DetailsDisplayProps) => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { key_points, ...categories } = details;
-  console.log(categories[selectedCategory]);
+  const categoryKeys = Object.keys(categories);
+
+  const categoryHandler = (idx: number) => {
+    setSelectedCategory(
+      categoryKeys[idx] as keyof Omit<
+        Processor['details'] | GraphicsCard['details'],
+        'key_points'
+      >
+    );
+  };
 
   return (
     <div>
@@ -30,9 +39,12 @@ const DetailsDisplay = (props: DetailsDisplayProps) => {
           .map((section, idx) => {
             return (
               <div
+                onClick={categoryHandler.bind(undefined, idx)}
                 key={idx}
                 className={`p-4 font-bold text-lg${
-                  idx === 0 ? ' border border-b-0' : ''
+                  categoryKeys[idx] === selectedCategory
+                    ? ' border border-b-0'
+                    : ''
                 }`}>
                 {section.section_name}
               </div>
