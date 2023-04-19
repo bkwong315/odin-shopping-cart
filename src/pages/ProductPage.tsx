@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import Processor from '../interfaces/Processor';
@@ -24,6 +24,13 @@ const ProductPage = (props: ProductPageProps) => {
     product = ProductList.graphics_cards[location.pathname.replace('/', '')];
   }
 
+  const imgs = Object.values(product.imgs);
+  const [selectedImgIdx, setSelectedImgIdx] = useState<number>(1);
+
+  const imgClickHandler = (idx: number) => {
+    setSelectedImgIdx(idx);
+  };
+
   return (
     <main className='flex flex-col max-w-[1440px] m-auto px-4 py-7'>
       <NavDisplay location={location} />
@@ -36,7 +43,12 @@ const ProductPage = (props: ProductPageProps) => {
 
               return (
                 <div
-                  className='grid place-items-center w-24 h-24 p-2 border'
+                  onClick={imgClickHandler.bind(undefined, idx)}
+                  className={`grid place-items-center w-24 h-24 p-2 border cursor-pointer ${
+                    idx === selectedImgIdx
+                      ? 'border-black'
+                      : 'hover:border-black'
+                  }`}
                   key={idx}>
                   <img src={img} alt={img} className='w-8/12' />
                 </div>
@@ -44,11 +56,7 @@ const ProductPage = (props: ProductPageProps) => {
             })}
           </div>
           <div>
-            <img
-              src={Object.values(product.imgs)[1]}
-              alt={Object.values(product.imgs)[1]}
-              className=''
-            />
+            <img src={imgs[selectedImgIdx]} alt={product.id} className='' />
           </div>
         </div>
         <div>
