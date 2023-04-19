@@ -56,7 +56,7 @@ const App = () => {
             />
           }></Route>
         <Route
-          path='/shop/product/:productId'
+          path='/:productId'
           element={
             <ProductPage
               productList={{
