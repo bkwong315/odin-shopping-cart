@@ -57,15 +57,7 @@ const App = () => {
           }></Route>
         <Route
           path='/:productId'
-          element={
-            <ProductPage
-              productList={{
-                ...ProductList.graphics_cards,
-                ...ProductList.processors,
-              }}
-              addToCart={addToCart}
-            />
-          }
+          element={<ProductPage addToCart={addToCart} />}
         />
       </Routes>
       <Footer />
