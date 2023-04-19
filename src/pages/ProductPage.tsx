@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import Processor from '../interfaces/Processor';
 import GraphicsCard from '../interfaces/GraphicsCard';
 import NavDisplay from '../components/NavDisplay/NavDisplay';
+import DetailsDisplay from '../components/DetailsDisplay/DetailsDisplay';
 import ProductList from '../ProductList';
 
 interface ProductPageProps {
@@ -97,6 +98,7 @@ const ProductPage = (props: ProductPageProps) => {
           </div>
         </div>
       </div>
+      <DetailsDisplay />
     </main>
   );
 };
