@@ -41,10 +41,10 @@ const DetailsDisplay = (props: DetailsDisplayProps) => {
               <div
                 onClick={categoryHandler.bind(undefined, idx)}
                 key={idx}
-                className={`p-4 font-bold text-lg${
+                className={`p-4 text-lg cursor-pointer ${
                   categoryKeys[idx] === selectedCategory
-                    ? ' border border-b-0'
-                    : ''
+                    ? ' border border-b-0 text-black font-bold'
+                    : ' text-neutral-500'
                 }`}>
                 {section.section_name}
               </div>
