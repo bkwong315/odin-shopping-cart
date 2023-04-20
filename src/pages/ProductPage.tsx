@@ -108,7 +108,12 @@ const ProductPage = (props: ProductPageProps) => {
         </div>
       </div>
       <DetailsDisplay details={product.details} />
-      <RelatedItems />
+      <div>
+        <h4 className='uppercase tracking-wide text-4xl font-klavika-medium'>
+          Related Products
+        </h4>
+        <RelatedItems />
+      </div>
     </main>
   );
 };
