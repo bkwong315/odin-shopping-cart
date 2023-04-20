@@ -5,7 +5,7 @@ import GraphicsCard, { isGraphicsCard } from '../../interfaces/GraphicsCard';
 import ProductList from '../../ProductList';
 import ProductCard from '../ProductCard/ProductCard';
 
-const Relatedproducts = () => {
+const RelatedProducts = () => {
   const prodList = { ...ProductList.processors, ...ProductList.graphics_cards };
   const prodArr = Object.values(prodList);
   const selectedProducts: (Processor | GraphicsCard)[] = [];
@@ -80,4 +80,4 @@ const Relatedproducts = () => {
   );
 };
 
-export default Relatedproducts;
+export default RelatedProducts;
