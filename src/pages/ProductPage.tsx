@@ -90,18 +90,44 @@ const ProductPage = (props: ProductPageProps) => {
           <div>Maximum Purchase: 1 unit</div>
           <div>
             <p>Quantity:</p>
-            <div className='flex'>
-              <button className='text-center p-2 border'>-</button>
+            <div className='flex w-[8vw]'>
+              <button className='flex justify-center items-center p-2 border aspect-square flex-auto basis-2/6'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 100 100'
+                  className='w-4 h-4'>
+                  <path
+                    stroke='#000'
+                    strokeWidth='12'
+                    d='M 0, 50
+                  L 100, 50'
+                  />
+                </svg>
+              </button>
               <input
                 type='number'
                 min={1}
                 max={1}
                 defaultValue={1}
-                className='p-2 text-center border border-x-0 appearance-none'
+                className='text-center border border-x-0 appearance-none w-8 flex-auto basis-2/6'
               />
-              <button className='text-center p-2 border'>+</button>
+              <button className='grid place-items-center p-2 border basis-2/6'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 100 100'
+                  className='w-4 h-4'>
+                  <path
+                    stroke='#000'
+                    strokeWidth='12'
+                    d='M 0, 50
+                  L 100, 50
+                  M 50, 0
+                  L 50, 100'
+                  />
+                </svg>
+              </button>
             </div>
-            <button className='uppercase px-8 py-3 bg-black text-white font-bold'>
+            <button className='uppercase px-8 py-3 bg-black text-white font-bold mt-8'>
               Add to Cart
             </button>
           </div>
