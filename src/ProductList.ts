@@ -1,10 +1,12 @@
 import Processor from './interfaces/Processor';
 import GraphicsCard from './interfaces/GraphicsCard';
 
-const ProductList: {
+type ProductListType = {
   graphics_cards: { [key: string]: GraphicsCard };
   processors: { [key: string]: Processor };
-} = {
+};
+
+const ProductList: ProductListType = {
   graphics_cards: {
     radeon_rx_7900xtx: {
       id: 'radeon_rx_7900xtx',
@@ -1559,3 +1561,5 @@ Ubuntu x86 64-Bit
 };
 
 export default ProductList;
+
+export { ProductListType };
