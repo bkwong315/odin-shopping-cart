@@ -10,21 +10,20 @@ import CartPage from './pages/CartPage';
 import Footer from './components/Footer/Footer';
 
 import ProductList from './ProductList';
-import GraphicsCard from './interfaces/GraphicsCard';
-import Processor from './interfaces/Processor';
 
 const App = () => {
   const [cart, setCart] = useState<ShoppingCart>({});
 
-  const addToCart = (product: Processor | GraphicsCard) => {
+  const addToCart = (
+    productId: string,
+    productType: string,
+    quantity: number
+  ) => {
     setCart(() => {
       const newCart = { ...cart };
-      newCart[product.id] = {
-        product,
-        quantity:
-          newCart[product.id] !== undefined
-            ? newCart[product.id].quantity + 1
-            : 1,
+      newCart[productId] = {
+        productInfo: [productId, productType],
+        quantity,
       };
 
       return newCart;

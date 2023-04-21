@@ -9,7 +9,7 @@ import ProductList from '../ProductList';
 import RelatedItems from '../components/RelatedItems/RelatedItems';
 
 interface ProductPageProps {
-  addToCart: (product: Processor | GraphicsCard) => void;
+  addToCart: (productId: string, productType: string, quantity: number) => void;
 }
 
 const ProductPage = (props: ProductPageProps) => {
