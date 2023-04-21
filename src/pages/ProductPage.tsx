@@ -109,7 +109,7 @@ const ProductPage = (props: ProductPageProps) => {
                 min={1}
                 max={1}
                 defaultValue={1}
-                className='text-center border border-x-0 appearance-none w-8 flex-auto basis-2/6'
+                className='text-center border border-x-0 focus-visible:border-x-2 appearance-none w-8 basis-2/6'
               />
               <button className='grid place-items-center p-2 border basis-2/6'>
                 <svg
