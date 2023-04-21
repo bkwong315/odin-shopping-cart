@@ -25,8 +25,14 @@ const ProductPage = (props: ProductPageProps) => {
     product = ProductList.graphics_cards[location.pathname.replace('/', '')];
   }
 
+  const [quantity, setQuantity] = useState<number>(1);
+
   const imgs = Object.values(product.imgs);
   const [selectedImgIdx, setSelectedImgIdx] = useState<number>(1);
+
+  const changeQuantity = (newQuantity: number) => {
+    setQuantity(newQuantity);
+  };
 
   const imgClickHandler = (idx: number) => {
     setSelectedImgIdx(idx);
@@ -113,7 +119,10 @@ const ProductPage = (props: ProductPageProps) => {
                 type='number'
                 min={1}
                 max={1}
-                defaultValue={1}
+                defaultValue={quantity}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  changeQuantity(parseInt(e.currentTarget.value))
+                }
                 className='text-center border border-x-0 focus-visible:border-x-2 appearance-none w-8 basis-2/6'
               />
               <button className='grid place-items-center p-2 border basis-2/6'>
