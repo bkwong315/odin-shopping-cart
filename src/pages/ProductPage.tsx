@@ -35,7 +35,7 @@ const ProductPage = (props: ProductPageProps) => {
   return (
     <main className='flex flex-col max-w-[1440px] m-auto px-4 py-7'>
       <NavDisplay location={location} />
-      <div className='grid grid-cols-2'>
+      <div className='grid grid-cols-2 gap-4 my-12'>
         <div className='grid grid-cols-[max-content_1fr] place-items-center '>
           <div className='grid gap-[.25rem]'>
             {Object.entries(product.imgs).map((keyValPair, idx) => {
@@ -57,32 +57,37 @@ const ProductPage = (props: ProductPageProps) => {
             })}
           </div>
           <div>
-            <img src={imgs[selectedImgIdx]} alt={product.id} className='' />
+            <img
+              src={imgs[selectedImgIdx]}
+              alt={product.id}
+              className='max-w-[320px]'
+            />
           </div>
         </div>
-        <div>
-          <h2 className='text-4xl font-klavika-medium tracking-wide'>
+        <div className='grid gap-4 text-sm my-4'>
+          <h2 className='text-[2.65rem] font-klavika-medium tracking-wide'>
             {product.name}
           </h2>
           <div>SKU: {product.sku}</div>
-          <div className='text-[#525252]'>
-            {product.salePrice && <span className='text-sm'>Was: </span>}
-            <span
-              className={
-                product.salePrice ? 'line-through font-bold' : 'font-bold'
-              }>
-              ${product.price}
-            </span>
-          </div>
-          {product.salePrice && (
-            <div>
-              <span className='text-sm'>Now:</span>{' '}
-              <span className='font-bold'>${product.salePrice}</span>
+          <div>
+            <div className='text-2xl'>
+              {product.salePrice && <span>Was: </span>}
+              <span className={product.salePrice ? 'line-through' : ''}>
+                ${product.price}
+              </span>
             </div>
-          )}
-          <ul>
+            {product.salePrice && (
+              <div className='text-2xl'>
+                <span>Now:</span>{' '}
+                <span className='font-bold text-[#525252]'>
+                  ${product.salePrice}
+                </span>
+              </div>
+            )}
+          </div>
+          <ul className='grid gap-2'>
             {product.details.key_points.map((point, idx) => (
-              <li className='list-disc ml-5' key={idx}>
+              <li className='list-disc ml-5 text-[#525252]' key={idx}>
                 {point}
               </li>
             ))}
@@ -90,7 +95,7 @@ const ProductPage = (props: ProductPageProps) => {
           <div>Maximum Purchase: 1 unit</div>
           <div>
             <p>Quantity:</p>
-            <div className='flex w-[8vw]'>
+            <div className='mt-2 flex w-[8vw]'>
               <button className='flex justify-center items-center p-2 border aspect-square flex-auto basis-2/6'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -127,14 +132,14 @@ const ProductPage = (props: ProductPageProps) => {
                 </svg>
               </button>
             </div>
-            <button className='uppercase px-8 py-3 bg-black text-white font-bold mt-8'>
+            <button className='uppercase px-8 py-3 bg-black text-white font-bold mt-4'>
               Add to Cart
             </button>
           </div>
         </div>
       </div>
       <DetailsDisplay details={product.details} />
-      <div>
+      <div className='mt-14'>
         <h4 className='uppercase tracking-wide text-4xl font-klavika-medium'>
           Related Products
         </h4>
