@@ -32,6 +32,11 @@ const CartPage = (props: CartPageProps) => {
           Continue Shopping
         </Link>
       </div>
+      <div className='mt-14'>
+        {itemsArr.length <= 0 && (
+          <div className='text-neutral-700 text-2xl'>Cart is empty</div>
+        )}
+      </div>
     </main>
   );
 };
