@@ -22,9 +22,16 @@ const CartPage = (props: CartPageProps) => {
           </Link>
         </div>
       </div>
-      <h3 className='uppercase text-4xl font-klavika-medium tracking-wide mt-8'>
-        My Cart {`(${itemsArr.length})`}
-      </h3>
+      <div className='flex flex-row justify-between items-end'>
+        <h3 className='uppercase text-4xl font-klavika-medium tracking-wide mt-8'>
+          My Cart {`(${itemsArr.length})`}
+        </h3>
+        <Link
+          to={'/all-products'}
+          className='uppercase underline text-neutral-500'>
+          Continue Shopping
+        </Link>
+      </div>
       {Object.entries(items).map((item, idx) => {
         const { productInfo, quantity } = item[1];
 
