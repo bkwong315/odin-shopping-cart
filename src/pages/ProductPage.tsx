@@ -144,7 +144,6 @@ const ProductPage = (props: ProductPageProps) => {
                   min={1}
                   max={1}
                   value={quantity}
-                  defaultValue={1}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     changeQuantity(parseInt(e.currentTarget.value))
                   }
