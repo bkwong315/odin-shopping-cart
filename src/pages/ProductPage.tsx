@@ -48,6 +48,14 @@ const ProductPage = (props: ProductPageProps) => {
     addToCart(product.id, product.product_type, quantity);
   };
 
+  const incrementQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const decrementQuantity = () => {
+    if (quantity - 1 > 0) setQuantity((prevQuantity) => prevQuantity - 1);
+  };
+
   return (
     <>
       {errorMsg.length > 0 && (
@@ -116,7 +124,9 @@ const ProductPage = (props: ProductPageProps) => {
             <div>
               <p>Quantity:</p>
               <div className='mt-2 flex w-[8vw]'>
-                <button className='flex justify-center items-center p-2 border aspect-square flex-auto basis-2/6'>
+                <button
+                  onClick={decrementQuantity}
+                  className='flex justify-center items-center p-2 border aspect-square flex-auto basis-2/6'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 100 100'
@@ -133,13 +143,16 @@ const ProductPage = (props: ProductPageProps) => {
                   type='number'
                   min={1}
                   max={1}
-                  defaultValue={quantity}
+                  value={quantity}
+                  defaultValue={1}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     changeQuantity(parseInt(e.currentTarget.value))
                   }
                   className='text-center border border-x-0 focus-visible:border-x-2 appearance-none w-8 basis-2/6'
                 />
-                <button className='grid place-items-center p-2 border basis-2/6'>
+                <button
+                  onClick={incrementQuantity}
+                  className='grid place-items-center p-2 border basis-2/6'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 100 100'
