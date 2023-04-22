@@ -126,7 +126,7 @@ const ProductPage = (props: ProductPageProps) => {
               <div className='mt-2 flex w-[8vw]'>
                 <button
                   onClick={decrementQuantity}
-                  className='flex justify-center items-center p-2 border aspect-square flex-auto basis-2/6'>
+                  className='flex justify-center items-center p-2 border aspect-square basis-2/6'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 100 100'
@@ -148,7 +148,7 @@ const ProductPage = (props: ProductPageProps) => {
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     changeQuantity(parseInt(e.currentTarget.value))
                   }
-                  className='text-center border border-x-0 focus-visible:border-x-2 appearance-none w-8 basis-2/6'
+                  className='text-center border border-x-0 focus-visible:border-x-2 appearance-none w-8 basis-[30%]'
                 />
                 <button
                   onClick={incrementQuantity}
