@@ -12,8 +12,8 @@ const CartPage = (props: CartPageProps) => {
   const { items } = props;
 
   return (
-    <main>
-      <div className='grid gap-3'>
+    <main className='max-w-[1440px] m-auto p-4'>
+      <div className='grid gap-3 text-sm'>
         <div>
           <Link to='/'>Home</Link> &gt;{' '}
           <Link to='/cart' className='text-neutral-500'>
