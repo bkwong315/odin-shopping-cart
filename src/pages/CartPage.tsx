@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ShoppingCart from '../interfaces/ShoppingCart';
+import ProductList, { ProductListType } from '../ProductList';
 
 interface CartPageProps {
   items: ShoppingCart;
@@ -13,7 +14,12 @@ const CartPage = (props: CartPageProps) => {
     <div>
       <h3>Your Cart</h3>
       {Object.entries(items).map((item, idx) => {
-        const { product, quantity } = item[1];
+        const { productInfo, quantity } = item[1];
+
+        const product =
+          ProductList[
+            productInfo[1].replace('-', '_') as keyof ProductListType
+          ][productInfo[0]];
 
         return (
           <div key={idx}>
@@ -23,15 +29,19 @@ const CartPage = (props: CartPageProps) => {
       })}
       <span>
         Subtotal:{' '}
-        {Object.entries(items).reduce(
-          (reducer, item) =>
+        {Object.values(items).reduce((reducer, item) => {
+          const product =
+            ProductList[item.productInfo[1] as keyof ProductListType][
+              item.productInfo[0]
+            ];
+          return (
             reducer +
-            (item[1].product.salePrice
-              ? parseFloat(item[1].product.salePrice)
-              : parseFloat(item[1].product.price)) *
-              item[1].quantity,
-          0
-        )}
+            (product.salePrice
+              ? parseFloat(product.salePrice)
+              : parseFloat(product.price)) *
+              item.quantity
+          );
+        }, 0)}
       </span>
     </div>
   );

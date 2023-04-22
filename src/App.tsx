@@ -22,7 +22,7 @@ const App = () => {
     setCart(() => {
       const newCart = { ...cart };
       newCart[productId] = {
-        productInfo: [productId, productType],
+        productInfo: [productId, `${productType.replace('-', '_')}s`],
         quantity,
       };
 
