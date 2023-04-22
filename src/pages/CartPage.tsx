@@ -2,6 +2,7 @@ import React from 'react';
 
 import ShoppingCart from '../interfaces/ShoppingCart';
 import ProductList, { ProductListType } from '../ProductList';
+import { Link, useLocation } from 'react-router-dom';
 
 interface CartPageProps {
   items: ShoppingCart;
@@ -9,9 +10,18 @@ interface CartPageProps {
 
 const CartPage = (props: CartPageProps) => {
   const { items } = props;
+  const location = useLocation();
 
   return (
-    <div>
+    <main>
+      <div className='grid gap-3'>
+        <div>
+          <Link to='/'>Home</Link> &gt;{' '}
+          <Link to='/cart' className='text-neutral-500'>
+            My Cart
+          </Link>
+        </div>
+      </div>
       <h3>Your Cart</h3>
       {Object.entries(items).map((item, idx) => {
         const { productInfo, quantity } = item[1];
@@ -43,7 +53,7 @@ const CartPage = (props: CartPageProps) => {
           );
         }, 0)}
       </span>
-    </div>
+    </main>
   );
 };
 
