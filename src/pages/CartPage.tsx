@@ -10,10 +10,11 @@ interface CartPageProps {
 
 const CartPage = (props: CartPageProps) => {
   const { items } = props;
+  const itemsArr = Object.values(items);
 
   return (
     <main className='max-w-[1440px] m-auto p-4'>
-      <div className='grid gap-3 text-sm'>
+      <div className='grid gap-3 text-sm mt-1'>
         <div>
           <Link to='/'>Home</Link> &gt;{' '}
           <Link to='/cart' className='text-neutral-500'>
@@ -21,7 +22,9 @@ const CartPage = (props: CartPageProps) => {
           </Link>
         </div>
       </div>
-      <h3>Your Cart</h3>
+      <h3 className='uppercase text-4xl font-klavika-medium tracking-wide mt-8'>
+        My Cart {`(${itemsArr.length})`}
+      </h3>
       {Object.entries(items).map((item, idx) => {
         const { productInfo, quantity } = item[1];
 
