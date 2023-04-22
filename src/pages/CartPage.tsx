@@ -2,7 +2,7 @@ import React from 'react';
 
 import ShoppingCart from '../interfaces/ShoppingCart';
 import ProductList, { ProductListType } from '../ProductList';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface CartPageProps {
   items: ShoppingCart;
@@ -10,7 +10,6 @@ interface CartPageProps {
 
 const CartPage = (props: CartPageProps) => {
   const { items } = props;
-  const location = useLocation();
 
   return (
     <main>
