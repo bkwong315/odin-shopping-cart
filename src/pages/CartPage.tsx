@@ -36,7 +36,7 @@ const CartPage = (props: CartPageProps) => {
         {itemsArr.length <= 0 ? (
           <div className='text-neutral-700 text-2xl'>Cart is empty</div>
         ) : (
-          <CartDisplay />
+          <CartDisplay cart={items} />
         )}
       </div>
     </main>
