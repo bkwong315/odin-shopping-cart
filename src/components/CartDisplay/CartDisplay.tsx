@@ -21,7 +21,15 @@ const CartDisplay = (props: CartDisplayProps) => {
     return <CartItem product={product} quantity={item.quantity} key={idx} />;
   });
 
-  return <div>{cartItems}</div>;
+  return (
+    <div>
+      {cartItems.length <= 0 ? (
+        <div className='text-neutral-700 text-2xl'>Cart is empty</div>
+      ) : (
+        <div>{cartItems}</div>
+      )}
+    </div>
+  );
 };
 
 export default CartDisplay;
