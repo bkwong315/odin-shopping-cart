@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ShoppingCart from '../interfaces/ShoppingCart';
-import ProductList, { ProductListType } from '../ProductList';
+import CartDisplay from '../components/CartDisplay/CartDisplay';
 import { Link } from 'react-router-dom';
 
 interface CartPageProps {
@@ -33,8 +33,10 @@ const CartPage = (props: CartPageProps) => {
         </Link>
       </div>
       <div className='mt-14'>
-        {itemsArr.length <= 0 && (
+        {itemsArr.length <= 0 ? (
           <div className='text-neutral-700 text-2xl'>Cart is empty</div>
+        ) : (
+          <CartDisplay />
         )}
       </div>
     </main>
