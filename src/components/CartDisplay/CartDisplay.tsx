@@ -26,19 +26,20 @@ const CartDisplay = (props: CartDisplayProps) => {
       {cartItems.length <= 0 ? (
         <div className='text-neutral-700 text-2xl'>Cart is empty</div>
       ) : (
-        <div>
-          <header className='grid grid-flow-col w-full p-3 bg-neutral-200 font-noto-sans-medium text-sm font-bold'>
-            <div className='flex items-center'>
-              <span className=''>ITEM</span>
-            </div>
-            <div className='flex justify-around items-center'>
-              <span className=''>PRICE</span>
-              <span className=''>QUANTITY</span>
-              <span className=''>TOTAL</span>
-            </div>
-          </header>
-          {cartItems}
-        </div>
+        <table className='w-full table-auto'>
+          <thead>
+            <tr className='bg-neutral-200 font-noto-sans-medium text-sm font-bold'>
+              <th className='p-4 text-left w-[55%]' colSpan={2}>
+                ITEM
+              </th>
+              <th className='w-[15%]'>PRICE</th>
+              <th className='w-[15%]'>QUANTITY</th>
+              <th className='w-[15%]'>TOTAL</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>{cartItems}</tbody>
+        </table>
       )}
     </div>
   );
