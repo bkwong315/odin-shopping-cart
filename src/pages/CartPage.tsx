@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom';
 
 interface CartPageProps {
   items: ShoppingCart;
+  updateQuantity: (productId: string, newQuantity: number) => void;
 }
 
 const CartPage = (props: CartPageProps) => {
-  const { items } = props;
+  const { items, updateQuantity } = props;
   const itemsArr = Object.values(items);
 
   return (
@@ -33,7 +34,7 @@ const CartPage = (props: CartPageProps) => {
         </Link>
       </div>
       <div className='mt-14'>
-        <CartDisplay cart={items} />
+        <CartDisplay cart={items} updateQuantity={updateQuantity} />
       </div>
     </main>
   );

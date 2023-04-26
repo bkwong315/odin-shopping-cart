@@ -5,10 +5,18 @@ import Processor from '../../interfaces/Processor';
 interface CartItemProps {
   product: Processor | GraphicsCard;
   quantity: number;
+  updateQuantity: (productId: string, newQuantity: number) => void;
 }
 
 const CartItem = (props: CartItemProps) => {
-  const { product, quantity } = props;
+  const { product, quantity, updateQuantity } = props;
+
+  const quantityOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const intQuantity = parseInt(e.currentTarget.value);
+    if (intQuantity > 0)
+      updateQuantity(product.id, parseInt(e.currentTarget.value));
+    else updateQuantity(product.id, 1);
+  };
 
   return (
     <tr className='border-b text-sm'>
@@ -30,6 +38,8 @@ const CartItem = (props: CartItemProps) => {
         <input
           type='number'
           value={quantity}
+          min={1}
+          onChange={quantityOnChange}
           className='text-center border-neutral-300 border border-x-0 focus-visible:border-x-2 appearance-none w-10'
         />
       </td>

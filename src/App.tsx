@@ -30,12 +30,26 @@ const App = () => {
     });
   };
 
+  const updateQuantity = (productId: string, newQuantity: number) => {
+    setCart(() => {
+      const newCart = { ...cart };
+      newCart[productId] = {
+        ...newCart[productId],
+        quantity: newQuantity,
+      };
+      return newCart;
+    });
+  };
+
   return (
     <Router>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/cart' element={<CartPage items={cart} />} />
+        <Route
+          path='/cart'
+          element={<CartPage items={cart} updateQuantity={updateQuantity} />}
+        />
         <Route
           path='processors'
           element={<ShopPage productList={ProductList.processors} />}></Route>

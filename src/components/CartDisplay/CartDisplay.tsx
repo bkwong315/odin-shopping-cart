@@ -7,10 +7,11 @@ import CartItem from './CartItem';
 
 interface CartDisplayProps {
   cart: ShoppingCart;
+  updateQuantity: (productId: string, newQuantity: number) => void;
 }
 
 const CartDisplay = (props: CartDisplayProps) => {
-  const { cart } = props;
+  const { cart, updateQuantity } = props;
 
   const cartItems = Object.values(cart).map((item, idx) => {
     const product =
@@ -18,7 +19,14 @@ const CartDisplay = (props: CartDisplayProps) => {
         `${item.productInfo[1].replace('-', '_')}` as keyof ProductListType
       ][item.productInfo[0]];
 
-    return <CartItem product={product} quantity={item.quantity} key={idx} />;
+    return (
+      <CartItem
+        product={product}
+        quantity={item.quantity}
+        updateQuantity={updateQuantity}
+        key={idx}
+      />
+    );
   });
 
   return (
