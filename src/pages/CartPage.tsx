@@ -29,7 +29,7 @@ const CartPage = (props: CartPageProps) => {
         </h3>
         <Link
           to={'/all-products'}
-          className='uppercase underline text-neutral-500'>
+          className='uppercase underline text-neutral-500 hover:text-neutral-800 transition-[color] duration-300'>
           Continue Shopping
         </Link>
       </div>
