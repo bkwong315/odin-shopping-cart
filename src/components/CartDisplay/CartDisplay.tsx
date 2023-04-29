@@ -8,10 +8,11 @@ import CartItem from './CartItem';
 interface CartDisplayProps {
   cart: ShoppingCart;
   updateQuantity: (productId: string, newQuantity: number) => void;
+  removeFromCart: (productId: string) => void;
 }
 
 const CartDisplay = (props: CartDisplayProps) => {
-  const { cart, updateQuantity } = props;
+  const { cart, updateQuantity, removeFromCart } = props;
 
   const subTotal = Object.values(cart).reduce((reducer, item) => {
     const product =
@@ -39,6 +40,7 @@ const CartDisplay = (props: CartDisplayProps) => {
         product={product}
         quantity={item.quantity}
         updateQuantity={updateQuantity}
+        removeFromCart={removeFromCart}
         key={idx}
       />
     );

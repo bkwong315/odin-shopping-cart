@@ -41,6 +41,14 @@ const App = () => {
     });
   };
 
+  const removeFromCart = (productId: string) => {
+    setCart(() => {
+      // eslint-disable-next-line no-unused-vars
+      const { [productId]: removedItem, ...newCart } = { ...cart };
+      return newCart;
+    });
+  };
+
   return (
     <Router>
       <Header />
@@ -48,7 +56,13 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route
           path='/cart'
-          element={<CartPage items={cart} updateQuantity={updateQuantity} />}
+          element={
+            <CartPage
+              items={cart}
+              updateQuantity={updateQuantity}
+              removeFromCart={removeFromCart}
+            />
+          }
         />
         <Route
           path='processors'

@@ -6,10 +6,11 @@ interface CartItemProps {
   product: Processor | GraphicsCard;
   quantity: number;
   updateQuantity: (productId: string, newQuantity: number) => void;
+  removeFromCart: (productId: string) => void;
 }
 
 const CartItem = (props: CartItemProps) => {
-  const { product, quantity, updateQuantity } = props;
+  const { product, quantity, updateQuantity, removeFromCart } = props;
 
   const quantityOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const intQuantity = parseInt(e.currentTarget.value);
@@ -52,7 +53,7 @@ const CartItem = (props: CartItemProps) => {
         }`}
       </td>
       <td className='text-center pr-4'>
-        <button>
+        <button onClick={removeFromCart.bind(null, product.id)}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 100 100'
