@@ -83,7 +83,7 @@ const CartDisplay = (props: CartDisplayProps) => {
                   placeholder='Enter your coupon code'
                   className='border text-sm px-2 flex-auto'
                 />
-                <button className='px-4 py-3 bg-neutral-600 text-white font-klavika-medium font-bold text-xs basis-[20%]'>
+                <button className='px-4 py-3 bg-neutral-600 text-white font-noto-sans-medium font-bold text-xs tracking-wider basis-[20%]'>
                   APPLY
                 </button>
               </div>
