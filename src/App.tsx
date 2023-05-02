@@ -51,7 +51,7 @@ const App = () => {
 
   return (
     <Router>
-      <Header />
+      <Header cart={cart} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route

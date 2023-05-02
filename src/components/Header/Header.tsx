@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import HeaderLink from './HeaderLink';
+import ShoppingCart from '../../interfaces/ShoppingCart';
+import Bundles, { BundleType, BundlesType } from '../../Bundles';
+import ProductList, { ProductListType } from '../../ProductList';
 
-const Header = () => {
+interface HeaderProps {
+  cart: ShoppingCart;
+}
+
+const Header = (props: HeaderProps) => {
+  const { cart } = props;
+  const cartArr = Object.values(cart);
+
+  const bundles: Array<BundleType> = [];
+
+  cartArr.forEach((item) => {
+    const product =
+      ProductList[
+        `${item.productInfo[1].replace('-', '_')}` as keyof ProductListType
+      ][item.productInfo[0]];
+
+    if (product.bundles) {
+      product.bundles.forEach((bundleId: keyof BundlesType) => {
+        if (!bundles.includes(Bundles[bundleId]))
+          bundles.push(Bundles[bundleId]);
+      });
+    }
+  });
+
   return (
     <header className='text-white'>
       <div className='w-full bg-black'>
@@ -24,8 +50,9 @@ const Header = () => {
           </div>
           <div className='flex gap-10'>
             <Link
+              data-cart-len={cartArr.length + bundles.length}
               to='/cart'
-              className='flex items-center p-2 hover:bg-white/[.15] rounded'>
+              className={`relative flex items-center p-2 hover:bg-white/[.15] rounded after:content-[attr(data-cart-len)] after:absolute after:grid after:place-items-center after:w-6 after:h-6 after:top-0 after:right-0 after:text-sm after:rounded-full after:border after:text-white after:translate-x-2/3 after:-translate-y-1/3`}>
               <img
                 src='./assets/icons/cart-shopping-solid.svg'
                 className={`h-4`}
