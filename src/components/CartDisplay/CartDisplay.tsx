@@ -120,7 +120,7 @@ const CartDisplay = (props: CartDisplayProps) => {
               </button>
             </div>
             <div className='text-end'>-- or use --</div>
-            <button className='relative grid place-items-center m-[.5rem_0_0_auto] bg-[#ffc439] px-4 py-3 rounded w-1/2'>
+            <button className='relative grid place-items-center m-[.5rem_0_0_auto] bg-[#ffc439] px-4 py-3 rounded w-1/2 hover:bg-[#ecb535]'>
               <img
                 src='./assets/icons/paypal_checkout_btn.svg'
                 alt='PayPal'
