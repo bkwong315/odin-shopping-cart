@@ -1,12 +1,13 @@
 import React from 'react';
 import GraphicsCard from '../../interfaces/GraphicsCard';
 import Processor from '../../interfaces/Processor';
+import { BundleType, isBundle } from '../../Bundles';
 
 interface CartItemProps {
-  product: Processor | GraphicsCard;
+  product: Processor | GraphicsCard | BundleType;
   quantity: number;
-  updateQuantity: (productId: string, newQuantity: number) => void;
-  removeFromCart: (productId: string) => void;
+  updateQuantity?: (productId: string, newQuantity: number) => void;
+  removeFromCart?: (productId: string) => void;
 }
 
 const CartItem = (props: CartItemProps) => {
@@ -23,15 +24,19 @@ const CartItem = (props: CartItemProps) => {
     <tr className='border-b text-sm'>
       <td className='grid place-items-center py-8'>
         <img
-          src={Object.values(product.imgs)[1]}
+          src={
+            !isBundle(product) ? Object.values(product.imgs)[1] : product.img
+          }
           alt={`${product.name}`}
-          className='w-12 h-12'
+          className='max-w-[4rem]'
         />
       </td>
       <td className='font-noto-san-medium font-bold'>{product.name}</td>
       <td className='text-center text-neutral-500'>
         $
-        {product.salePrice
+        {isBundle(product)
+          ? parseFloat(product.price).toFixed(2)
+          : product.salePrice
           ? parseFloat(product.salePrice).toFixed(2)
           : parseFloat(product.price).toFixed(2)}
       </td>
@@ -40,35 +45,41 @@ const CartItem = (props: CartItemProps) => {
           type='number'
           value={quantity}
           min={1}
-          onChange={quantityOnChange}
-          className='text-center border-neutral-300 border border-x-0 focus-visible:border-x-2 appearance-none w-10'
+          onChange={updateQuantity && quantityOnChange}
+          disabled={updateQuantity === undefined}
+          className='text-center border-neutral-300 border border-x-0 focus-visible:border-x-2 appearance-none w-10 disabled:text-neutral-500 disabled:bg-transparent'
         />
       </td>
       <td className='text-center text-neutral-500'>
         $
         {`${
-          product.salePrice
+          isBundle(product)
+            ? parseFloat(product.price).toFixed(2)
+            : product.salePrice
             ? (parseFloat(product.salePrice) * quantity).toFixed(2)
             : (parseFloat(product.price) * quantity).toFixed(2)
         }`}
       </td>
-      <td className='text-center pr-4'>
-        <button onClick={removeFromCart.bind(null, product.id)}>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 100 100'
-            className='w-6 h-6'>
-            <path
-              stroke='#000'
-              strokeWidth='12'
-              d='M 20, 20
+      {removeFromCart && (
+        <td className='text-center pr-4'>
+          <button
+            onClick={removeFromCart && removeFromCart.bind(null, product.id)}>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 100 100'
+              className='w-6 h-6'>
+              <path
+                stroke='#000'
+                strokeWidth='12'
+                d='M 20, 20
                     L 80, 80
                     M 20, 80
                     L 80, 20'
-            />
-          </svg>
-        </button>
-      </td>
+              />
+            </svg>
+          </button>
+        </td>
+      )}
     </tr>
   );
 };

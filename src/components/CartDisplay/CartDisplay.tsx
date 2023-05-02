@@ -2,6 +2,7 @@ import React from 'react';
 
 import ShoppingCart from '../../interfaces/ShoppingCart';
 import ProductList, { ProductListType } from '../../ProductList';
+import Bundles, { BundlesType, BundleType } from '../../Bundles';
 
 import CartItem from './CartItem';
 
@@ -13,6 +14,8 @@ interface CartDisplayProps {
 
 const CartDisplay = (props: CartDisplayProps) => {
   const { cart, updateQuantity, removeFromCart } = props;
+
+  const bundles: Array<BundleType> = [];
 
   const subTotal = Object.values(cart).reduce((reducer, item) => {
     const product =
@@ -35,6 +38,13 @@ const CartDisplay = (props: CartDisplayProps) => {
         `${item.productInfo[1].replace('-', '_')}` as keyof ProductListType
       ][item.productInfo[0]];
 
+    if (product.bundles) {
+      product.bundles.forEach((bundleId: keyof BundlesType) => {
+        if (!bundles.includes(Bundles[bundleId]))
+          bundles.push(Bundles[bundleId]);
+      });
+    }
+
     return (
       <CartItem
         product={product}
@@ -44,6 +54,10 @@ const CartDisplay = (props: CartDisplayProps) => {
         key={idx}
       />
     );
+  });
+
+  const bundleItems = Object.values(bundles).map((bundle, idx) => {
+    return <CartItem product={bundle} quantity={1} key={idx} />;
   });
 
   const currencyFormatter = new Intl.NumberFormat('en-us', {
@@ -70,7 +84,10 @@ const CartDisplay = (props: CartDisplayProps) => {
                 <th></th>
               </tr>
             </thead>
-            <tbody>{cartItems}</tbody>
+            <tbody>
+              {cartItems}
+              {bundleItems}
+            </tbody>
           </table>
           <div className='w-[33%] m-[0_0_0_auto] border-neutral-200'>
             <div className='flex justify-between border-b border-inherit w-full py-4'>
