@@ -15,6 +15,7 @@ const ProductList: ProductListType = {
       sku: '100-300000069',
       stock: '0',
       price: '999.00',
+      bundles: ['radeon_graphics_tlou'],
       imgs: {
         card: './assets/imgs/products/rx-7900xtx-card.webp',
         img_1: './assets/imgs/products/rx-7900xtx-1.webp',
@@ -120,6 +121,7 @@ Linux x86_64`,
       stock: '25',
       price: '899.00',
       salePrice: '849.00',
+      bundles: ['radeon_graphics_tlou'],
       imgs: {
         card: './assets/imgs/products/rx-7900xt-card.webp',
         img_1: './assets/imgs/products/rx-7900xt-1.webp',
@@ -224,6 +226,7 @@ Linux x86_64`,
       stock: '34',
       price: '1099.00',
       salePrice: '699.00',
+      bundles: ['radeon_graphics_tlou'],
       imgs: {
         card: './assets/imgs/products/rx-6950xt-card.webp',
         default: './assets/imgs/products/rx-6950xt-default.webp',
@@ -330,6 +333,7 @@ Linux x86_64`,
       stock: '47',
       price: '549.00',
       salePrice: '419.00',
+      bundles: ['radeon_graphics_tlou'],
       imgs: {
         card: './assets/imgs/products/rx-6750xt-card.webp',
         default: './assets/imgs/products/rx-6750xt-default.webp',
@@ -434,6 +438,7 @@ Linux x86_64`,
       sku: '100-100000910WOF',
       stock: '0',
       price: '449.00',
+      bundles: ['ryzen_7000_star_wars'],
       imgs: {
         card: './assets/imgs/products/ryzen-7-7800x3d-card.webp',
         default: './assets/imgs/products/ryzen-7-7800x3d-default.webp',
@@ -509,6 +514,7 @@ Ubuntu x86 64-Bit
       sku: '100-100000909WOF',
       stock: '0',
       price: '599.00',
+      bundles: ['ryzen_7000_star_wars'],
       imgs: {
         card: './assets/imgs/products/ryzen-9-7900x3d-card.webp',
         default: './assets/imgs/products/ryzen-9-7900x3d-default.webp',
@@ -583,6 +589,7 @@ Ubuntu x86 64-Bit
       name: 'AMD RYZEN™ 9 7950X3D Processor',
       sku: '100-100000908WOF',
       price: '699.00',
+      bundles: ['ryzen_7000_star_wars'],
       stock: '12',
       imgs: {
         card: './assets/imgs/products/ryzen-9-7950x3d-card.webp',
@@ -661,6 +668,7 @@ Ubuntu x86 64-Bit
       stock: '0',
       price: '699.00',
       salePrice: '599.00',
+      bundles: ['ryzen_7000_star_wars'],
       imgs: {
         card: './assets/imgs/products/ryzen-9-7950x-card.webp',
         default: './assets/imgs/products/ryzen-9-7950x-default.webp',
@@ -741,6 +749,7 @@ Ubuntu x86 64-Bit
       stock: '25',
       price: '299.00',
       salePrice: '249.00',
+      bundles: ['ryzen_7000_star_wars'],
       imgs: {
         card: './assets/imgs/products/ryzen-5-7600x-card.webp',
         default: './assets/imgs/products/ryzen-5-7600x-default.webp',
@@ -815,6 +824,7 @@ Ubuntu x86 64-Bit
       stock: '64',
       price: '399.00',
       salePrice: '349.00',
+      bundles: ['ryzen_7000_star_wars'],
       imgs: {
         card: './assets/imgs/products/ryzen-7-7700x-card.webp',
         default: './assets/imgs/products/ryzen-7-7700x-default.webp',
@@ -896,6 +906,7 @@ Ubuntu x86 64-Bit
       stock: '16',
       price: '549.00',
       salePrice: '449.00',
+      bundles: ['ryzen_7000_star_wars'],
       imgs: {
         card: './assets/imgs/products/ryzen-9-7900x-card.webp',
         default: './assets/imgs/products/ryzen-9-7900x-default.webp',

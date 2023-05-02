@@ -6,6 +6,7 @@ interface GraphicsCard {
   stock: string;
   price: string;
   salePrice?: string;
+  bundles?: string[];
   imgs: {
     [key: string]: string;
   };
