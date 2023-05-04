@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, createContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
@@ -10,6 +10,10 @@ import CartPage from './pages/CartPage';
 import Footer from './components/Footer/Footer';
 
 import ProductList from './ProductList';
+
+const CartDispatch = createContext(null);
+
+export { CartDispatch };
 
 const App = () => {
   const [cart, setCart] = useState<ShoppingCart>({});
@@ -49,44 +53,51 @@ const App = () => {
     });
   };
 
+  const getApi = useMemo(
+    () => ({ addToCart, updateQuantity, removeFromCart }),
+    [cart]
+  );
+
   return (
     <Router>
       <Header cart={cart} />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route
-          path='/cart'
-          element={
-            <CartPage
-              items={cart}
-              updateQuantity={updateQuantity}
-              removeFromCart={removeFromCart}
-            />
-          }
-        />
-        <Route
-          path='processors'
-          element={<ShopPage productList={ProductList.processors} />}></Route>
-        <Route
-          path='graphics-cards'
-          element={
-            <ShopPage productList={ProductList.graphics_cards} />
-          }></Route>
-        <Route
-          path='all-products'
-          element={
-            <ShopPage
-              productList={{
-                ...ProductList.graphics_cards,
-                ...ProductList.processors,
-              }}
-            />
-          }></Route>
-        <Route
-          path='/:productId'
-          element={<ProductPage addToCart={addToCart} />}
-        />
-      </Routes>
+      <CartDispatch.Provider value={getApi}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route
+            path='/cart'
+            element={
+              <CartPage
+                items={cart}
+                updateQuantity={updateQuantity}
+                removeFromCart={removeFromCart}
+              />
+            }
+          />
+          <Route
+            path='processors'
+            element={<ShopPage productList={ProductList.processors} />}></Route>
+          <Route
+            path='graphics-cards'
+            element={
+              <ShopPage productList={ProductList.graphics_cards} />
+            }></Route>
+          <Route
+            path='all-products'
+            element={
+              <ShopPage
+                productList={{
+                  ...ProductList.graphics_cards,
+                  ...ProductList.processors,
+                }}
+              />
+            }></Route>
+          <Route
+            path='/:productId'
+            element={<ProductPage addToCart={addToCart} />}
+          />
+        </Routes>
+      </CartDispatch.Provider>
       <Footer />
     </Router>
   );
