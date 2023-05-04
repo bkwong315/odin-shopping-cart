@@ -279,6 +279,8 @@ const Shop = (props: ShopProps) => {
                 }
                 return (
                   <ProductCard
+                    id={item.id}
+                    productType={item.product_type}
                     name={item.name}
                     pageLink={`/${item.id}`}
                     imgUrl={Object.values(item.imgs)[0]}

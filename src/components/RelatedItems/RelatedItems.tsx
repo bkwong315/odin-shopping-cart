@@ -61,6 +61,8 @@ const RelatedProducts = () => {
 
               return (
                 <ProductCard
+                  id={product.id}
+                  productType={product.product_type}
                   name={product.name}
                   pageLink={`/${product.id}`}
                   imgUrl={Object.values(product.imgs)[0]}

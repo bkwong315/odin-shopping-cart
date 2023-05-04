@@ -11,6 +11,7 @@ interface FeaturedProductsProps {
 
 const FeaturedProducts = (props: FeaturedProductsProps) => {
   const { data } = props;
+
   const featuredProducts: Array<Processor | GraphicsCard> = Object.entries(
     data
   ).reduce((reducer, item) => {
@@ -59,6 +60,8 @@ const FeaturedProducts = (props: FeaturedProductsProps) => {
           }
           return (
             <ProductCard
+              id={item.id}
+              productType={item.product_type}
               name={item.name}
               pageLink={`/${item.id}`}
               imgUrl={Object.values(item.imgs)[0]}

@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+import { CartDispatch } from '../../App';
+
 interface ProductCardProps {
+  id: string;
+  productType: string;
   name: string;
   pageLink: string;
   imgUrl: string;
@@ -15,6 +19,8 @@ interface ProductCardProps {
 
 const ProductCard = (props: ProductCardProps) => {
   const {
+    id,
+    productType,
     name,
     pageLink,
     imgUrl,
@@ -25,7 +31,9 @@ const ProductCard = (props: ProductCardProps) => {
     salePrice,
     inStock,
   } = props;
+
   const location = useLocation();
+  const cartDispatch = useContext(CartDispatch);
 
   return (
     <div
@@ -68,7 +76,9 @@ const ProductCard = (props: ProductCardProps) => {
         )}
       </div>
       {inStock ? (
-        <button className='uppercase text-white bg-[#27282b] border border-[#27282b] font-bold w-[90%] py-2 hover:bg-transparent hover:text-black transition-[color,background] duration-500'>
+        <button
+          onClick={cartDispatch.addToCart.bind(null, id, productType, 1)}
+          className='uppercase text-white bg-[#27282b] border border-[#27282b] font-bold w-[90%] py-2 hover:bg-transparent hover:text-black transition-[color,background] duration-500'>
           Add to Cart
         </button>
       ) : (
