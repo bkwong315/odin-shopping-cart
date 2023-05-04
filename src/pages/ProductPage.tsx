@@ -175,7 +175,7 @@ const ProductPage = (props: ProductPageProps) => {
               </div>
               <button
                 onClick={addItem}
-                className='uppercase px-8 py-3 bg-black text-white font-bold mt-4 text-base'>
+                className='uppercase px-8 py-3 bg-black text-white font-bold mt-4 text-base transition-[background-color] duration-300 hover:bg-neutral-500'>
                 Add to Cart
               </button>
             </div>
