@@ -8,6 +8,7 @@ import ProductPage from './pages/ProductPage';
 import ShoppingCart from './interfaces/ShoppingCart';
 import CartPage from './pages/CartPage';
 import Footer from './components/Footer/Footer';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import ProductList from './ProductList';
 
@@ -60,6 +61,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <Header cart={cart} />
       <CartDispatch.Provider value={getApi}>
         <Routes>
