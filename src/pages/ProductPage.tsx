@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import NavDisplay from '../components/NavDisplay/NavDisplay';
@@ -55,6 +55,12 @@ const ProductPage = (props: ProductPageProps) => {
   const decrementQuantity = () => {
     if (quantity - 1 > 0) setQuantity((prevQuantity) => prevQuantity - 1);
   };
+
+  const [relatedItems, setRelatedItems] = useState<React.ReactElement>();
+
+  useEffect(() => {
+    setRelatedItems(<RelatedItems />);
+  }, []);
 
   return (
     <>
@@ -180,7 +186,7 @@ const ProductPage = (props: ProductPageProps) => {
           <h4 className='uppercase tracking-wide text-4xl font-klavika-medium'>
             Related Products
           </h4>
-          <RelatedItems />
+          {relatedItems}
         </div>
       </main>
     </>
