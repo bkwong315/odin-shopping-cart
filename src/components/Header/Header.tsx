@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import HeaderLink from './HeaderLink';
 import ShoppingCart from '../../interfaces/ShoppingCart';
 import Bundles, { BundleType, BundlesType } from '../../Bundles';
 import ProductList, { ProductListType } from '../../ProductList';
+import LogoDisplay from '../LogoDisplay/LogoDisplay';
 
 interface HeaderProps {
   cart: ShoppingCart;
@@ -34,20 +35,7 @@ const Header = (props: HeaderProps) => {
     <header className='text-white'>
       <div className='w-full bg-black'>
         <div className='flex justify-between max-w-[1440px] m-auto px-4 py-7'>
-          <div className='flex items-center gap-4'>
-            <Link to='https://www.amd.com/en.html'>
-              <img
-                src='./assets/imgs/amd-header-logo.svg'
-                className={`h-6`}
-                alt='AMD'
-              />
-            </Link>
-            <Link
-              to='/'
-              className='font-bold text-lg pl-4 transition-[color] hover:text-neutral-400 border-solid border-l-[1px] border-[rgba(255,255,255,.4)]'>
-              Store
-            </Link>
-          </div>
+          <LogoDisplay />
           <div className='flex gap-10'>
             <Link
               data-cart-len={cartArr.length + bundles.length}
