@@ -44,7 +44,7 @@ const Header = (props: HeaderProps) => {
                 cartArr.length + bundles.length > 0
                   ? 'after:content-[attr(data-cart-len)]'
                   : 'after:content-none'
-              } after:absolute after:grid after:place-items-center after:w-6 after:h-6 after:top-0 after:right-0 after:text-sm after:rounded-full after:border after:text-white after:translate-x-2/3 after:-translate-y-1/3`}>
+              } after:absolute after:grid after:place-items-center after:w-6 after:h-6 after:top-0 after:right-0 after:text-sm after:rounded-full after:border after:text-white after:translate-x-2/3 after:-translate-y-1/3 after:bg-black after:z-10`}>
               <img
                 src='./assets/icons/cart-shopping-solid.svg'
                 className={`h-4`}
