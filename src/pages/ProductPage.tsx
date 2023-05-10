@@ -7,6 +7,7 @@ import ProductList from '../ProductList';
 import RelatedItems from '../components/RelatedItems/RelatedItems';
 import GraphicsCard from '../interfaces/GraphicsCard';
 import Processor from '../interfaces/Processor';
+import Modal from '../components/Modal/Modal';
 
 interface ProductPageProps {
   addToCart: (productId: string, productType: string, quantity: number) => void;
@@ -41,7 +42,9 @@ const ProductPage = (props: ProductPageProps) => {
 
   const addItem = () => {
     if (quantity > 1) {
-      setErrorMsg('Please enter a valid product quantity.');
+      setErrorMsg(
+        `You can only purchase a maximum of 1 of the ${product.name} per order.`
+      );
       return;
     }
 
@@ -62,10 +65,12 @@ const ProductPage = (props: ProductPageProps) => {
     setRelatedItems(<RelatedItems />);
   }, []);
 
+  const resetErrorMsg = () => setErrorMsg('');
+
   return (
     <>
       {errorMsg.length > 0 && (
-        <div className='absolute grid place-items-center w-full h-full bg-[rgb(100 100 100 / .5)]'></div>
+        <Modal msg={errorMsg} closeError={resetErrorMsg} />
       )}
       <main className='flex flex-col max-w-[1440px] m-auto px-4 py-7'>
         <NavDisplay location={location} />

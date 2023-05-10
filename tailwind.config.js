@@ -5,6 +5,8 @@ module.exports = {
       animation: {
         'fade-grow': 'fade-grow 300ms linear forwards',
         'fade-out': 'fade-out 300ms linear forwards',
+        'height-grow-container': 'height-grow-container 800ms linear forwards',
+        'height-grow-icon': 'height-grow-icon 800ms linear forwards',
       },
       keyframes: {
         'fade-grow': {
@@ -29,6 +31,24 @@ module.exports = {
           '100%': {
             opacity: '0',
             height: '75%',
+          },
+        },
+        'height-grow-container': {
+          '0%': {
+            'max-height': 0,
+          },
+          '100%': {
+            'max-height': '12rem',
+          },
+        },
+        'height-grow-icon': {
+          '0%': {
+            'max-height': 0,
+            padding: 0,
+          },
+          '100%': {
+            'max-height': '12rem',
+            padding: '1rem',
           },
         },
       },
