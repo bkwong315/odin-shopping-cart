@@ -10,10 +10,11 @@ interface CartDisplayProps {
   cart: ShoppingCart;
   updateQuantity: (productId: string, newQuantity: number) => void;
   removeFromCart: (productId: string) => void;
+  updateErrorMsg: (msg: string) => void;
 }
 
 const CartDisplay = (props: CartDisplayProps) => {
-  const { cart, updateQuantity, removeFromCart } = props;
+  const { cart, updateQuantity, removeFromCart, updateErrorMsg } = props;
 
   const bundles: Array<BundleType> = [];
 
@@ -51,13 +52,21 @@ const CartDisplay = (props: CartDisplayProps) => {
         quantity={item.quantity}
         updateQuantity={updateQuantity}
         removeFromCart={removeFromCart}
+        updateErrorMsg={updateErrorMsg}
         key={idx}
       />
     );
   });
 
   const bundleItems = Object.values(bundles).map((bundle, idx) => {
-    return <CartItem product={bundle} quantity={1} key={idx} />;
+    return (
+      <CartItem
+        product={bundle}
+        quantity={1}
+        updateErrorMsg={updateErrorMsg}
+        key={idx}
+      />
+    );
   });
 
   const currencyFormatter = new Intl.NumberFormat('en-us', {

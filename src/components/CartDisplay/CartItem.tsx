@@ -6,18 +6,31 @@ import { BundleType, isBundle } from '../../Bundles';
 interface CartItemProps {
   product: Processor | GraphicsCard | BundleType;
   quantity: number;
+  updateErrorMsg: (msg: string) => void;
   updateQuantity?: (productId: string, newQuantity: number) => void;
   removeFromCart?: (productId: string) => void;
 }
 
 const CartItem = (props: CartItemProps) => {
-  const { product, quantity, updateQuantity, removeFromCart } = props;
+  const { product, quantity, updateErrorMsg, updateQuantity, removeFromCart } =
+    props;
 
   const quantityOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const intQuantity = parseInt(e.currentTarget.value);
     if (intQuantity > 0)
       updateQuantity(product.id, parseInt(e.currentTarget.value));
-    else updateQuantity(product.id, 1);
+    else {
+      updateQuantity(product.id, 1);
+    }
+  };
+
+  const isValidQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const intQuantity = parseInt(e.currentTarget.value);
+
+    if (intQuantity > 1) {
+      updateErrorMsg('The maximum purchasable quantity is 1');
+      updateQuantity(product.id, 1);
+    }
   };
 
   return (
@@ -46,6 +59,7 @@ const CartItem = (props: CartItemProps) => {
           value={quantity}
           min={1}
           onChange={updateQuantity && quantityOnChange}
+          onBlur={updateQuantity && isValidQuantity}
           disabled={updateQuantity === undefined}
           className='text-center border-neutral-300 border border-x-0 focus-visible:border-x-2 appearance-none w-10 disabled:text-neutral-500 disabled:bg-transparent'
         />

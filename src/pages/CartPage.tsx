@@ -17,6 +17,9 @@ const CartPage = (props: CartPageProps) => {
 
   const [errorMsg, setErrorMsg] = useState('');
 
+  const updateErrorMsg = (msg: string) => {
+    setErrorMsg(msg);
+  };
   const resetErrorMsg = () => setErrorMsg('');
 
   return (
@@ -47,6 +50,7 @@ const CartPage = (props: CartPageProps) => {
           cart={items}
           updateQuantity={updateQuantity}
           removeFromCart={removeFromCart}
+          updateErrorMsg={updateErrorMsg}
         />
       </div>
     </main>
