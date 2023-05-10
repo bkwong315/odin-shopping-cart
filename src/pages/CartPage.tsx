@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ShoppingCart from '../interfaces/ShoppingCart';
 import CartDisplay from '../components/CartDisplay/CartDisplay';
+import Modal from '../components/Modal/Modal';
 import { Link } from 'react-router-dom';
 
 interface CartPageProps {
@@ -14,8 +15,15 @@ const CartPage = (props: CartPageProps) => {
   const { items, updateQuantity, removeFromCart } = props;
   const itemsArr = Object.values(items);
 
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const resetErrorMsg = () => setErrorMsg('');
+
   return (
     <main className='max-w-[1440px] m-auto p-4'>
+      {errorMsg.length > 0 && (
+        <Modal msg={errorMsg} closeError={resetErrorMsg} />
+      )}
       <div className='grid gap-3 text-sm mt-1'>
         <div>
           <Link to='/'>Home</Link> &gt;{' '}
